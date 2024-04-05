@@ -1,0 +1,22 @@
+@document.meta
+title: 86. Creating a New SvelteKit Project
+description: 
+authors: mattc
+categories: [
+  Project Setup
+  routes
+  page
+]
+created: 2024-01-06T01:54:16+0800
+updated: 2024-01-06T01:54:45+0800
+version: 1.1.1
+@end
+
+* Create a new SvelteKit project
+
+.image pic/86/1.png
+
+
+* Folder 'routes'
+
+.image pic/86/2.png

@@ -1,0 +1,55 @@
+@document.meta
+title: 181. Creating the Album Page and Loading Album Data
+description: 
+authors: mattc
+categories: [
+  Page Load
+  Page Data
+  Copyrights
+  Release Date
+]
+created: 2024-02-13T10:02:06+0800
+updated: 2024-02-13T10:02:39+0800
+version: 1.1.1
+@end
+
+* Demand: create page for single album
+
+  .image pic/181/1.png
+
+  .image pic/181/2.png
+
+  .image pic/181/3.png
+
+
+* Fetching data of single album
+
+  We use the pre-made fetchRefresh to send a request to our own endpoint, so there won't be any sensitive information involved. Therefore, we choose to use +page.ts to handle it.
+
+  .image pic/181/4.png
+
+
+* Banner & tracks
+
+  Here we only render the main content, and later we will use components to refactor them into more complete contents.
+
+  .image pic/181/5.png
+
+  .image pic/181/6.png
+
+
+* Release date & copyrights
+
+** data & plan
+   .image pic/181/7.png
+
+** helper for copyrights type symbol
+   .image pic/181/8.png
+
+** markup
+   .image pic/181/9.png
+
+** styling
+   Because the banner and tracks above need to be refactored by components later, we will only style the release date & copyrights here.
+
+   .image pic/181/10.png

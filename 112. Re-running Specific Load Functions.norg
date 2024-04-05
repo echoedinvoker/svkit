@@ -1,0 +1,46 @@
+@document.meta
+title: 112. Re-running Specific Load Functions
+description: 
+authors: mattc
+categories: [
+  invalidate
+  Load Function
+]
+created: 2024-01-11T14:02:09+0800
+updated: 2024-01-11T14:02:29+0800
+version: 1.1.1
+@end
+
+* invalidate()
+
+  The invalidateAll() introduced in the previous lecture will re-run all load functions, but sometimes we only want to re-run a specific load function. In this case, we can use invalidate().
+
+  .image pic/112/1.png
+
+  .image pic/112/2.png
+
+
+* Using callback in invalidate()
+
+  In addition to directly passing in the URL string, you can also pass in a callback function.
+
+  .image pic/112/3.png
+
+  .image pic/112/4.png
+
+
+* Re-run load function in +page.server.ts?
+
+  Can we also trigger the load function in +page.server.ts to re-run by using invalidate() in +page.svelte?
+
+  .image pic/112/5.png
+
+  In +page.server.ts, the url in the fetch does not have any effect, but it can still be triggered using depends().
+
+
+* Re-run load function in different routes?
+
+  .image pic/112/6.png
+
+  The +page.server.ts and +page.ts are independent of each other in different routes, so only the load function in the upper +layout.server.ts will be triggered by invalidate().
+

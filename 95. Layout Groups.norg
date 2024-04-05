@@ -1,0 +1,33 @@
+@document.meta
+title: 95. Layout Groups
+description: 
+authors: mattc
+categories: [
+  Layouts
+  Layout Groups
+]
+created: 2024-01-08T09:10:49+0800
+updated: 2024-01-08T09:11:09+0800
+version: 1.1.1
+@end
+
+* Back to regular nested layouts
+
+  In the previous lecture, we used conditionally layout to prevent the content of the root layout from being displayed on the setting page. In this lecture, we are going to implement it in a different way, so we will change it back.
+
+  .image pic/95/1.png
+
+
+* Layout groups
+
+** \(\) folder
+   .image pic/95/2.png
+
+   This type of folder will not have any impact on our app, but it can group routes.
+
+** add +layout.svelte inside
+   In addition to the route, you can also place +layout.svelte inside the \(\) folder. This way, the routes under this group can share the same layout.
+
+   .image pic/95/3.png
+
+   This way is suitable for situations with more complex layouts. The simplest way is to use conditional layout.

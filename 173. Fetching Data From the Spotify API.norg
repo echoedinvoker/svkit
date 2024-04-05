@@ -1,0 +1,40 @@
+@document.meta
+title: 173. Fetching Data From the Spotify API
+description: 
+authors: mattc
+categories: [
+  PageServerLoad
+  PageLoad
+  HTTPOnlyCookie
+]
+created: 2024-02-05T14:25:37+0800
+updated: 2024-02-05T14:26:48+0800
+version: 1.1.1
+@end
+
+* Prepare to build our home page
+
+  We are going to start creating the homepage, and all the data will be obtained from the Spotify API.
+
+** Web API documents
+   .image pic/173/1.png
+
+** prepare +page.svelte
+   .image pic/173/2.png
+
+
+* For HTTPOnly cookie, we should fetching on server side
+
+  Because the access token is stored in an HTTPOnly cookie, we need to retrieve the access token on the server side.
+
+  .image pic/173/3.png
+
+  But this will result in all SSR, although it is helpful for SEO, it is not good for user experience.
+
+
+
+* Next lecture we wanna do...
+
+  In the next lecture, we will turn the fetching of +page.server.ts into an endpoint and call it in +page.ts. This way, we will not be limited to server-side processing and will have a better user experience.
+
+  .image pic/173/4.png

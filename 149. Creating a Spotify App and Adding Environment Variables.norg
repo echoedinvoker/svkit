@@ -1,0 +1,39 @@
+@document.meta
+title: 149. Creating a Spotify App and Adding Environment Variables
+description: 
+authors: mattc
+categories: [
+  Spotify API
+  Environment Variables
+  Spotify Developer Dashboard
+  Authentication Flow
+]
+created: 2024-01-22T16:19:23+0800
+updated: 2024-01-22T16:19:54+0800
+version: 1.1.1
+@end
+
+* Create app on Spotify Developer Dashboard
+
+  .image pic/149/1.png
+
+  .image pic/149/2.png
+
+  In the video, there is no website or URI to input. Someone in the QA mentioned that this example does not require the use of a URI, so you can enter any URI randomly.
+
+
+* Set environment variables
+
+  We store sensitive information in .env, and other similar URL information can also be written here.
+
+  .image pic/149/3.png
+
+  .image pic/149/4.png
+
+
+* Authentication flow
+
+  The next lecture will start by deploying the verification part according to the following process.
+
+  .image pic/149/5.png
+

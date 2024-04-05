@@ -1,0 +1,52 @@
+@document.meta
+title: 110. Using Cookies to Login and Logout
+description: 
+authors: mattc
+categories: [
+  Login
+  Logout
+  Token
+  Cookie
+]
+created: 2024-01-11T10:29:21+0800
+updated: 2024-01-11T10:29:51+0800
+version: 1.1.1
+@end
+
+* Give token to cookie when login
+
+  We put the token in the cookie in the login endpoint, and check it in root + layout.server.ts to confirm the user's login status.
+
+  .image pic/110/1.png
+
+
+* Prevent user login when logged
+
+  After the user logs in, the possibility of logging in again should be eliminated. Both of the following methods need to be implemented to achieve this goal.
+
+** from UI
+   .image pic/110/2.png
+
+** from +page.ts
+   Above is just a limitation on the UI. A knowledgeable user may directly enter the URL to access the login page, so we also need to add restrictions in the +page.ts file.
+
+   .image pic/110/3.png
+
+   .image pic/110/4.png
+
+
+* Logout
+
+  We implement another endpoint 'api/logout' and create a button in the root layout to call it.
+
+  .image pic/110/5.png
+
+
+* No reactive render when logout
+
+  .image pic/110/6.png
+
+  Further clarify where the reactive render was lost from.
+
+  .image pic/110/7.png
+

@@ -1,0 +1,28 @@
+@document.meta
+title: 140. Using Forms with GET Method
+description: 
+authors: mattc
+categories: [
+  GET
+  Form
+]
+created: 2024-01-19T13:26:09+0800
+updated: 2024-01-19T13:26:29+0800
+version: 1.1.1
+@end
+
+* form with method="GET"
+
+  In the previous lectures, we have been using form post to send something to the server, but sometimes we don't need to post anything to the server.
+
+  .image pic/137/10.png
+
+  As mentioned above, when using the form with method="GET", it can achieve the same functionality as an anchor.
+
+
+* Build page
+
+  The value of the input in the form will be passed as a query string to the new page.
+
+  .image pic/137/11.png
+

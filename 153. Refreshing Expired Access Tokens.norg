@@ -1,0 +1,62 @@
+@document.meta
+title: 153. Refreshing Expired Access Tokens
+description: 
+authors: mattc
+categories: [
+  Refresh token
+]
+created: 2024-01-23T10:20:42+0800
+updated: 2024-01-23T10:21:11+0800
+version: 1.1.1
+@end
+
+* Plan
+
+  .image pic/153/1.png
+
+  .image pic/153/2.png
+
+  In the above situation, the app should try to use the refresh token to refresh the access token.
+
+
+* Request to Spotify for refreshing access token
+
+** +layout.server.ts determine when to refresh token
+   .image pic/153/3.png
+
+** documents of Spotify API to refresh token
+   .image pic/153/4.png
+
+** create endpoint to Spotify
+   The API is the same as the one to get access token, only the body part is different. So you can directly copy it over and make modifications.
+
+   .image pic/153/5.png
+
+** result 
+   .image pic/153/6.png
+
+
+* Refresh token failed
+
+  .image pic/153/7.png
+
+
+* Test: expired access token & invalid refresh token
+
+  .image pic/153/8.png
+
+  .image pic/153/9.png
+
+
+* Refresh token successfully
+
+  .image pic/153/10.png
+
+  Redirect will cause +layout.server.ts to be executed again, so the logic of `fetch(".../me")` does not need to be rewritten again.
+
+
+* Test: expired access token & valid refresh token
+
+  .image pic/153/11.png
+
+  .image pic/153/12.png

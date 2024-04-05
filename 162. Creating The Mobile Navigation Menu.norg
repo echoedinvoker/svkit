@@ -1,0 +1,87 @@
+@document.meta
+title: 162. Creating The Mobile Navigation Menu
+description: 
+authors: mattc
+categories: [
+  Top bar
+  Menu
+  Transition
+  Overlay
+  Navigation
+]
+created: 2024-01-26T15:54:48+0800
+updated: 2024-01-26T15:55:21+0800
+version: 1.1.1
+@end
+
+* Top bar layout
+
+  .image pic/162/1.png
+
+  .image pic/162/2.png
+
+
+* Create menu by Navigation.svelte
+
+  We use Navigation.svelte in Header.svelte to create a menu, please note that it is different from Navigation.svelte in +layout.svelte.
+
+  .image pic/162/3.png
+
+  .image pic/162/4.png
+
+
+* Open menu button
+
+  The menu has an additional open and close mode compared to the side bar in desktop mode, so we need to create a state control and add buttons to change its value.
+
+** create button for menu
+   .image pic/162/5.png
+
+** overlay button with menu inner content
+   .image pic/162/6.png
+
+   .image pic/162/7.png
+
+
+* Hidden menu
+
+  In mobile mode, the menu we designed slides out from the left side, so the hidden property is implemented using translateX(-100).
+
+  .image pic/162/9.png
+
+  Although both the side bar in desktop mode and the menu in mobile mode are implemented using Navigation.svelte, they are two separate entities. In desktop mode, the menu still exists but is hidden on the left side. Therefore, we cannot solely rely on `isMobileMenuOpen` to determine whether the menu should be hidden. We must add `desktop` as a condition for judgement.
+
+  .image pic/162/10.png
+
+  .image pic/162/11.png
+
+  .image pic/162/12.png
+
+
+* Overlay when opening the menu
+
+** create overlay
+   .image pic/162/13.png
+
+   .image pic/162/14.png
+
+   We use `fixed` to actually overlay the entire viewport, so if the menu with the same `fixed` does not have a z-index setting, it will be covered. Therefore, as seen in the image above, we must add it.
+
+** hidden overlay when desktop mode
+   .image pic/162/15.png
+
+   .image pic/162/16.png
+
+** others (transition, click to close menu)
+   The appearance and disappearance of overlay belong to the generation and destruction of elements, so the Svelte transition attribute can be used directly.
+
+   .image pic/162/17.png
+
+   Remove Ally warning using `aira-hidden`.
+
+
+* Hidden scroll bar when opening the menu
+
+  .image pic/162/18.png
+
+  .image pic/162/19.png

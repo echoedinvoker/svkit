@@ -1,0 +1,143 @@
+* (-) Section 6: Action
+** (x) [51. Introduction to Actions (8/55)]{:51. Introduction to Actions:}
+** ( ) [52. The Longpress Action (8/)]{:52. The Longpress Action:}
+** ( ) [53. Using Tippy.js in Svelte Without Actions (6/)]{:53. Using Tippy.js in Svelte Without Actions:}
+** ( ) [54. Creating a Tippy.js Action (6/)]{:54. Creating a Tippy.js Action:}
+* (-) Section 8: The Context API
+** (x) [66. Introduction to the Context API (2/10)]{:66. Introduction to the Context API:}
+** ( ) [67. Handling a Form Without Context (13/)]{:67. Handling a Form Without Context:}
+** ( ) [68. Creating Form & Field Components(9/)]{:68. Creating Form and Field Components:}
+** ( ) []{::}
+** ( ) []{::}
+* (x) Section 10: SvelteKit: Pages & Layouts
+** (x) [85. Introduction to SvelteKit (2/10)]{:85. Introduction to SvelteKit:}
+** (x) [86. Creating a New SvelteKit Project (7/20)]{:86. Creating a New SvelteKit Project:}
+** (x) [87. Creating Routes (9/44)]{:87. Creating Routes:}
+** (x) [88. The \$lib Folder Alias & Custom Aliases (7/35)]{:88. The lib Folder Alias and Custom Aliases:}
+** (x) [89. Navigation Functions: goto(), beforeNavigate() & afterNavigate() (8/42)]{:89. Navigation Functions- goto beforeNavigate and afterNavigate:}
+** (x) [90. Rest Parameters (5/32)]{:90. Rest Parameters:}
+** (x) [91. Optional Parameters (3/18)]{:91. Optional Parameters:}
+** (x) [92. Parameter Matchers (7/36)]{:92. Parameter Matchers:}
+** (x) [93. Layouts Basics (9/46)]{:93. Layouts Basics:}
+** (x) [94. Changing Layouts Conditionally (3/20)]{:94. Changing Layouts Conditionally:}
+** (x) [95. Layout Groups (7/27)]{:95. Layout Groups:}
+** (x) [96. Breaking Out of Layouts Hierarchy (7/)]{:96. Breaking Out of Layouts Hierarchy:}
+* (x) Section 11: SvelteKit: Loading Data
+** (x) [97. Shared Load Function (Server & Client) (9/38)]{:97. Shared Load Function (Server and Client):}
+** (x) [98. Type-safety with Generated Types (7/36)]{:98. Type-safety with Generated Types:}
+** (x) [99. Displaying Our Loaded Data (6/24)]{:99. Displaying Our Loaded Data:}
+** (x) [100. Server Only Load Functions (8/54)]{:100. Server Only Load Functions:}
+** (x) [101. Layout Load Functions (7/33)]{:101. Layout Load Functions:}
+** (x) [102. Product Page Exercise + Errors & Rediercts (10/59)]{:102. Product Page Exercise + Errors and Rediercts:}
+** (x) [103. Passing Data From a Page to its Parent Layout (8/36)]{:103. Passing Data From a Page to its Parent Layout:}
+** (x) [104. Controlling Routes' Response and Creating Endpoints (10/48)]{:104. Controlling Routes' Response and Creating Endpoints:}
+** (x) [105. Handling Pages & Endpoints in the Same Route and Creating POST Endpoints (9/37)]{:105. Handling Pages and Endpoints in the Same Route and Creating POST Endpoints:}
+** (x) [106. Load Function Inputs (8/35)]{:106. Load Function Inputs:}
+** (x) [107. Using Fetch in SvelteKit (12/73)]{:107. Using Fetch in SvelteKit:}
+** (x) [108. [UPDATE] Data Streaming with Promises (9/69)]{:108. [UPDATE] Data Streaming with Promises:}
+** (x) [109. Creating a Login Page and Endpoint (10/43)]{:109. Creating a Login Page and Endpoint:}
+** (x) [110. Using Cookies to Login and Logout (13/75)]{:110. Using Cookies to Login and Logout:}
+** (x) [111. Re-running All Load Functions (10/60)]{:111. Re-running All Load Functions:}
+** (x) [112. Re-running Specific Load Functions (9/33)]{:112. Re-running Specific Load Functions:}
+** (x) [113. [UPDATE] Capturing & Restoring Data with Snapshots (5/46)]{:113. [UPDATE] Capturing and Restoring Data with Snapshots:}
+** (x) [114. The Handle Hook (13/60)]{:114. The Handle Hook:}
+** (x) [115. Using the Locals Object (11/52)]{:115. Using the Locals Object:}
+** (x) [116. The handleFetch Hook (7/49)]{:116. The handleFetch Hook:}
+** (x) [118. Handling Expected Errors (15/52)]{:118. Handling Expected Errors:}
+** (x) [119. Handling Unexpected Errors (9/50)]{:119. Handling Unexpected Errors:}
+** (x) [120. Using Environment Variables (15/46)]{:120. Using Environment Variables:}
+** (x) [121. Server Only Modules (4/25)]{:121. Server Only Modules:}
+* (x) Section 13: SvelteKit: Preloading Pages & Link Options
+** (x) [122. Preloading Pages' Data (9/49)]{:122. Preloading Pages' Data:}
+** (x) [123. Preloading Pages' Code (5/26)]{:123. Preloading Pages' Code:}
+** (x) [124. Reload and No Scroll Link Options (5/21)]{:124. Reload and No Scroll Link Options:}
+** (x) [125. Preloading Code and Data Programmatically (4/18)]{:125. Preloading Code and Data Programmatically:}
+* (x) Section 14: SvelteKit: Page Options & Pre-rendering
+** (x) [126. SSR, CSR and trailingSlash Options (8/40)]{:126. SSR, CSR and trailingSlash Options:}
+** (x) [127. Pre-rendering Pages and Endpoints (10/66)]{:127. Pre-rendering Pages and Endpoints:}
+** (x) [128. Pre-rendering Pages with Dynamic Content (5/38)]{:128. Pre-rendering Pages with Dynamic Content:}
+** (x) [129. Pre-rendering Pages with Dynamic Parameters (12/69)]{:129. Pre-rendering Pages with Dynamic Parameters:}
+** (x) [130. Adding Dynamic Data in a Pre-rendered Page (4/25)]{:130. Adding Dynamic Data in a Pre-rendered Page:}
+** (x) [131. app-environment Module (4/23)]{:131. app-environment Module:}
+* (-) Section 15: SvelteKit: Form Actions
+** (x) [132. What are Form Actions? (10/64)]{:132. What are Form Actions?:}
+** (x) [134. Logging in Using a Form Action (9/58)]{:134. Logging in Using a Form Action:}
+** (x) [135. Redirecting in Form Actions (5/39)]{:135. Redirecting in Form Actions:}
+** (x) [136. Named Form Actions (7/37)]{:136. Named Form Actions:}
+** (x) [137. Enhancing Our Form with JavaScript (9/54)]{:137. Enhancing Our Form with JavaScript:}
+** (x) [138. Customizing the Enhance Action (14/59)]{:138. Customizing the Enhance Action:}
+** (x) [139. \[Exercise Solution\] Showing Validation Error Using the Enhance Action (11/55)]{:138. \[Exercise Solution\] Showing Validation Error Using the Enhance Action:}
+** (x) [140. Using Forms with GET Method (3/22)]{:140. Using Forms with GET Method:}
+* (-) Section 16: SvelteKit: Deployment
+** (x) [141. Adapters Overview (4/27)]{:141. Adapters Overview:}
+** (x) [142. Building & Running Our App with the Node Adapter (5/50)]{:142. Building and Running Our App with the Node Adapter:}
+** (-) [143. Deploying to Heroku]{:143. Deploying to Heroku:}
+** (x) [144. Deploying to Vercel (7/39)]{:144. Deploying to Vercel:}
+** (-) [145. Deploying to Netlify]{:145. Deploying to Netlify:}
+* (-) Section 17: Let's Create a Spotify App with Svelte & SvelteKit
+** (x) [146. Creating a New SvelteKit Project And Installing a CSS Normalizer (4/20)]{:146. Creating a New SvelteKit Project And Installing a CSS Normalizer:}
+** (x) [147. Setting Up SASS (8/52)]{:147. Setting Up SASS:}
+** (x) [148. Adding Global Styles (6/38)]{:148. Adding Global Styles:}
+** (x) [149. Creating a Spotify App & Adding Environment Variables (4/23)]{:149. Creating a Spotify App and Adding Environment Variables:}
+** (x) [150. Constructing a Spotify Login Request (13/64)]{:150. Constructing a Spotify Login Request:}
+** (x) [151. Creating the Spotify Redirect Callback Endpoint (15/63)]{:151. Creating the Spotify Redirect Callback Endpoint:}
+** (x) [152. Populating the Root Layout With The Logged in Spotify User (14/59)]{:152. Populating the Root Layout With The Logged in Spotify User:}
+** (x) [153. Refreshing Expired Access Tokens (15/79)]{:153. Refreshing Expired Access Tokens:}
+** (x) [154. Logging Out Using An Endpoint (13/75)]{:154. Logging Out Using An Endpoint:}
+** (x) [155. Adding Assets & Icons (5/25)]{:155. Adding Assets and Icons:}
+** (x) [156. Creating a Button Component (15/64)]{:156. Creating a Button Component:}
+** (x) [157. Using Typescript to Extend Native HTML Attributes (6/49)]{:157. Using Typescript to Extend Native HTML Attributes:}
+** (x) [158. Creating & Styling the Login Page (13/90)]{:158. Creating and Styling the Login Page:}
+** (x) [159. Creating the Desktop Navigation Menu (14/70)]{:159. Creating the Desktop Navigation Menu:}
+** (x) [160. Styling the Desktop Navigation Menu (8/50)]{:160. Styling the Desktop Navigation Menu:}
+** (x) [161. Creating the Top Bar & Animating it On Scroll (14/88)]{:161. Creating the Top Bar and Animating it On Scroll:}
+** (x) [162. Creating The Mobile Navigation Menu (15/109)]{:162. Creating The Mobile Navigation Menu:}
+** (x) [163. Improving Menu's Accessibility (10/79)]{:163. Improving Menu's Accessibility:}
+** (x) [164. Implementing Focus Trap for The Navigation Menu (11/71)]{:164. Implementing Focus Trap for The Navigation Menu:}
+** (x) [165. Creating An Icon Button Component (9/46)]{:165. Creating An Icon Button Component:}
+** (x) [166. Finalizing Our Mobile Navigation Menu (10/59)]{:166. Finalizing Our Mobile Navigation Menu:}
+** (x) [167. Creating & Styling the User Menu Button (8/46)]{:167. Creating and Styling the User Menu Button:}
+** (x) [168. Creating a Tippy Svelte Action For Out Profile Menu (12/83)]{:168. Creating a Tippy Svelte Action For Out Profile Menu:}
+** (x) [169. Adding a Tippy Theme & Styling The User Menu (8/56)]{:169. Adding a Tippy Theme and Styling The User Menu:}
+** (x) [170. Improving Tippy By Adding Tippy Plugins (10/39)]{:170. Improving Tippy By Adding Tippy Plugins:}
+** (x) [171. Pages' Title Tag, Skip Link & Pages' Loading Indicator (13/64)]{:171. Pages' Title Tag, Skip Link and Pages' Loading Indicator:}
+** (x) [172. Styling the Layout for Disabled JavaScript (14/91)]{:172. Styling the Layout for Disabled JavaScript:}
+** (x) [173. Fetching Data From the Spotify API (7/58)]{:173. Fetching Data From the Spotify API:}
+** (x) [174. Creating an Endpoint for Forwarding Spotify API Calls (9/45)]{:174. Creating an Endpoint for Forwarding Spotify API Calls:}
+** (x) [175. Fetching the Home Page Data (18/95)]{:175. Fetching the Home Page Data:}
+** (x) [176. Refreshing the Access Token During Client Side Navigation (18/99)]{:176. Refreshing the Access Token During Client Side Navigation:}
+** (x) [177. Creating the Home Page Markup (12/63)]{:177. Creating the Home Page Markup:}
+** (x) [178. Styling the Home Page (4/24)]{:178. Styling the Home Page:}
+** (x) [179. Creating a Card Component (12/63)]{:179. Creating a Card Component:}
+** (x) [180. Creating a Card Component (Cont.) (12/55)]{:180. Creating a Card Component (Cont.):}
+** (x) [181. Creating the Album Page & Loading Album Data (11/60)]{:181. Creating the Album Page and Loading Album Data:}
+** (x) [182. ItemPage Component Markup (12/48)]{:182. ItemPage Component Markup:}
+** (x) [183. Styling The ItemPage Component (15/104)]{:183. Styling The ItemPage Component:}
+** (x) [184. Getting The Average Colour of an Image (7/49)]{:184. Getting The Average Colour of an Image:}
+** (x) [185. Using the Average Colour Endpoint in the Album Page (7/72)]{:185. Using the Average Colour Endpoint in the Album Page:}
+** (x) [186. The TrackList Component Markup (11/64)]{:186. The TrackList Component Markup:}
+** (x) [187. The TrackList Component Styling (10/52)]{:187. The TrackList Component Styling:}
+** (x) [188. Creating an Audio Player Component (15/105)]{:188. Creating an Audio Player Component:}
+** (x) [189. Using the Player Component in The TrackList Component (8/37)]{:189. Using the Player Component in The TrackList Component:}
+** (x) [190. Handling the TrackList Component When JS is Disabled (7/81)]{:190. Handling the TrackList Component When JS is Disabled:}
+** (x) [191. Customizing Error Pages (12/53)]{:191. Customizing Error Pages:}
+** ( ) [192. Adding a Retry Button in Error Page (8/)]{:192. Adding a Retry Button in Error Page:}
+** ( ) [193. Playlist Page Data (7/)]{:193. Playlist Page Data:}
+** ( ) [194. Playlist Page Markup & Styling (14/)]{:194. Playlist Page Markup & Styling:}
+** ( ) [195. Playlist Tracks Load More Button (9/)]{:195. Playlist Tracks Load More Button:}
+** ( ) [196. Playlist Tracks Pagination For Disabled JS (13/)]{:196. Playlist Tracks Pagination For Disabled JS:}
+** ( ) [197. Follow & Unfollow Playlist Form Actions (10/)]{:197. Follow & Unfollow Playlist Form Actions:}
+** ( ) [198. Follow & Unfollow Button (10/)]{:198. Follow & Unfollow Button:}
+** ( ) [199. Enhancing Follow & Unfollow When JS is Enabled (9/)]{:199. Enhancing Follow & Unfollow When JS is Enabled:}
+** ( ) [200. Creating a Toasts Store & Component (12/)]{:200. Creating a Toasts Store & Component:}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}
+** ( ) []{::}

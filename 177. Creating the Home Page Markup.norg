@@ -1,0 +1,53 @@
+@document.meta
+title: 177. Creating the Home Page Markup
+description: 
+authors: mattc
+categories: [
+  Deserialization
+  Markup
+  Each
+  Section
+  Spotify
+]
+created: 2024-02-11T10:20:33+0800
+updated: 2024-02-11T10:21:15+0800
+version: 1.1.1
+@end
+
+* Deserialize albums/playlists data from PageData
+
+  In the previous lecture, we have already returned all the data needed for the homepage to PageData. Next, we need to deserialize this data into a format that is easy to render on the homepage.
+
+** plan
+   We need to organize the scattered playlists and albums data into a single array of objects so that we can render it using the `{#each}` markup.
+
+   .image pic/177/1.png
+
+** sections
+*** regular albums/playlists
+    .image pic/177/2.png
+
+    Pay attention to the elements in the items, Spotify also provides a type for them.
+
+*** random categories
+    The position of randomly categorized playlists and other information in pageData is separate, so the handling method here is different from regular albums/playlists.
+
+    .image pic/177/3.png
+
+** test
+   .image pic/177/4.png
+
+
+* Markup
+
+  We will first establish all necessary elements, including their classes, in this part. We will then proceed with styling in the subsequent lecture.
+
+** section header
+   .image pic/177/5.png
+
+   We can use the previously created global class 'visually-hidden' in main.scss to add a hidden text for screen readers.
+
+   .image pic/177/6.png
+
+** section items
+   .image pic/177/7.png

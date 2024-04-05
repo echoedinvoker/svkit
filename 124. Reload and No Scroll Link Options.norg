@@ -1,0 +1,38 @@
+@document.meta
+title: 124. Reload and No Scroll Link Options
+description: 
+authors: mattc
+categories: [
+  Link
+  data-sveltekit-reload
+  data-sveltekit-noscroll
+  Scroll
+  Navigation
+]
+created: 2024-01-15T11:08:30+0800
+updated: 2024-01-15T11:08:59+0800
+version: 1.1.1
+@end
+
+* data-sveltekit-reload
+
+  This attr allows us to bypass client navigation when clicking on a link, and instead of reloading to navigate to a new page.
+
+  .image pic/124/1.png
+
+
+
+* Scroll
+
+** default behavior
+   The default client navigation behavior of a link is to scroll the page to the top to simulate the result of a traditional reload page.
+
+   .image pic/124/2.png
+
+   .image pic/124/3.png
+
+
+** data-sveltekit-noscroll
+   In theory, this "attr" can prevent the behavior of scrolling to the top when using link navigation to a new page, but it is ineffective in actual usage.
+
+   .image pic/124/4.png

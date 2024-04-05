@@ -1,0 +1,43 @@
+@document.meta
+title: 104. Controlling Routes' Response and Creating Endpoints
+description: 
+authors: mattc
+categories: [
+  RequestHandler
+  Response
+  API Routes
+]
+created: 2024-01-09T09:47:29+0800
+updated: 2024-01-09T09:47:57+0800
+version: 1.1.1
+@end
+
+* RequestHandler
+
+  Sometimes our route may not want to return HTML but data, such as JSON. In this case, we can add +server.ts and create a RequestHandler to handle the client's request.
+
+  .image pic/104/1.png
+
+  The function name of RequestHandler must be an HTTP verb and cannot be named randomly.
+
+  .image pic/104/2.png
+
+
+* Response fetched data
+
+  .image pic/104/3.png
+
+  Response is a built-in class in Node.js, SvelteKit provides json() for simplified operation.
+
+  .image pic/104/4.png
+
+
+* Reponse error
+
+  .image pic/104/5.png
+
+  Similarly, SvelteKit provides error() to simplify operations.
+
+  .image pic/104/6.png
+
+  Although return error() can work properly, the lecture specifically mentioned that throw should be used instead of return error(). However, I don't know why, so I will record it first.

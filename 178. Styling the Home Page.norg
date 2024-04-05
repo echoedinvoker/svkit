@@ -1,0 +1,37 @@
+@document.meta
+title: 178. Styling the Home Page
+description: 
+authors: mattc
+categories: [
+  Styling
+  Section
+  Grid
+  Layout
+]
+created: 2024-02-11T10:48:48+0800
+updated: 2024-02-11T10:49:14+0800
+version: 1.1.1
+@end
+
+* Layout grid items (RWD)
+
+** Styling
+   Because the layout of grid items will be applied throughout the entire app, we define it in main.scss.
+
+   .image pic/178/1.png
+
+** test
+   .image pic/178/2.png
+
+   .image pic/178/3.png
+
+   .image pic/178/4.png
+
+   .image pic/178/5.png
+
+
+* Styling section header
+
+  The section header is only needed on the homepage, so it is defined in the `<style>` of that page.
+
+  .image pic/178/6.png

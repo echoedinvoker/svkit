@@ -1,0 +1,57 @@
+@document.meta
+title: 122. Preloading Pages' Data
+description: 
+authors: mattc
+categories: [
+  Preloading
+  Link
+  Navigation
+]
+created: 2024-01-15T10:10:09+0800
+updated: 2024-01-15T10:11:28+0800
+version: 1.1.1
+@end
+
+* Prepare
+
+  By default, SvelteKit has the preload feature enabled for the entire app. We need to turn it off for the learning of this lecture.
+
+  .image pic/122/1.png
+
+
+* Click link without preload
+
+  .image pic/122/2.png
+
+  .image pic/122/3.png
+
+
+* Preload on link
+
+** hover
+   .image pic/122/4.png
+
+** tap
+   .image pic/122/5.png
+
+
+* Set preload on container tag & prevent preload
+
+** container
+   `data-sveltekit-preload` can be used on a container tag so that all the links inside it will have the preload functionality.
+
+   .image pic/122/6.png
+
+** prevent preload
+   If you don't want to preload some of the links, you can use `data-sveltekit-prevent-preload="off"` to prevent preload.
+
+   .image pic/122/7.png
+
+
+* Let preload work on whole app
+
+  Add `data-sveltekit-preload="hover"` to the body tag of app.html, and it will enable preload functionality for all links in the entire app. This is directly written in app.html when creating a SvelteKit project.
+
+  .image pic/122/8.png
+
+

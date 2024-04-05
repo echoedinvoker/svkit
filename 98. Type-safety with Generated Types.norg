@@ -1,0 +1,39 @@
+@document.meta
+title: 98. Type-safety with Generated Types
+description: 
+authors: mattc
+categories: [
+  Type safe
+  PageData
+  app.d.ts
+]
+created: 2024-01-08T11:33:32+0800
+updated: 2024-01-08T14:06:03+0800
+version: 1.1.1
+@end
+
+* Type safe of load data in +page.svelte (failed)
+
+  Use the type 'PageData' provided by SvelteKit in +page.svelte according to the instructional video to enhance type safety.
+
+  .image pic/98/1.png
+
+  The course video says that we can automatically determine the type of data returned from +page.ts by using the Type 'PageData' provided by SvelteKit. However, I tried it and it didn't work. I'm not sure if it's an issue with the environment or the version.
+
+
+* Configure type 'PageData' in app.d.ts (successful)
+
+  We can define the content of PageData in add.d.ts under root, and use it directly in +page.ts.
+
+  .image pic/98/3.png
+
+  The result is successful in this way, but it is necessary to clearly know the type of loading data in order to use PageData to achieve type safety.
+
+
+* Fix the issue
+
+To achieve type safety without knowing what data will be obtained from +page.ts, both types 'PageLoad' and 'PageData' must be used together as follows.
+
+.image pic/100/6.png
+
+As mentioned above, we do not need to write any types in app.d.ts. The +page.svelte will also have type safe functionality.

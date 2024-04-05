@@ -1,0 +1,69 @@
+@document.meta
+title: 176. Refreshing the Access Token During Client Side Navigation
+description: 
+authors: mattc
+categories: [
+  Token Expired
+  Refresh Token
+]
+created: 2024-02-07T18:29:59+0800
+updated: 2024-02-07T18:30:37+0800
+version: 1.1.1
+@end
+
+* Token expired when navigating pages on client side
+
+** review layout refreshing token mechanism
+   Before, we used to check if the access token had expired when the app was reloaded. If it had expired, we would refresh the token.
+
+   .image pic/176/1.png
+
+** page content fetching is also using token, so it should has refreshing token mechanism, too
+   However, during client side navigation, fetching contents also requires a token, so a refreshing token mechanism is also needed. Our lecture is to solve this problem.
+
+   .image pic/176/2.png
+
+** simulation problem
+   .image pic/176/3.png
+
+   .image pic/176/4.png
+
+
+* Create custom fetch to replace the built-in fetch
+
+  .image pic/176/5.png
+
+  Custom fetch is an extension based on the original fetch, so the original fetch needs to be passed as a parameter. Its type can be directly obtained from the original fetch.
+
+  .image pic/176/6.png
+
+  .image pic/176/7.png
+
+  .image pic/176/8.png
+
+
+* Avoid refresh token multiple times
+
+  Every custom fetch hook will check if the access token has expired. If it has expired, it will refresh the token. However, if multiple requests occur simultaneously, it will cause the problem of refreshing the token multiple times.
+
+  .image pic/176/9.png
+
+  We create a property in the window to store the refresh token promise. When the refresh token promise is still executing, other requests will wait for this promise to complete before executing. This avoids the issue of multiple refresh token requests.
+
+  Note that if you create a property in window, you must add this property to the Window interface. We can add this property in app.d.ts.
+
+  .image pic/176/10.png
+
+  On the client side, we can use the window property to save the promise and solve the issue of refreshing the token multiple times. This is also one of the reasons why fetching is done in +page.ts instead of +page.server.ts.
+
+  .image pic/176/11.png
+
+* Not only access token but also refresh token is expired
+
+  .image pic/176/12.png
+
+  .image pic/176/13.png
+
+  In this situation, we need to throw an error on the client side to display the error page.
+
+  .image pic/176/14.png

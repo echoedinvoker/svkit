@@ -1,0 +1,53 @@
+@document.meta
+title: 128. Pre-rendering Pages with Dynamic Content
+description: 
+authors: mattc
+categories: [
+  Static HTML
+  Preload
+  Mutantful Endpoint
+]
+created: 2024-01-15T20:34:16+0800
+updated: 2024-01-15T20:34:54+0800
+version: 1.1.1
+@end
+
+* Serve product page as static html
+
+  Assuming the product page has very few updates and mostly displays the same products to all users, this page can also consider building static HTML to provide.
+
+  .image pic/128/1.png
+
+
+* Build error of mutantful endpoint
+
+  To create a static HTML page, the endpoint it fetches can only have a GET request handler. If there are other types, the following error will occur during the build phase.
+
+  .image pic/128/2.png
+
+  .image pic/128/3.png
+
+  We simply remove the POST out of this endpoint file to let build pass.
+
+  .image pic/128/4.png
+
+  .image pic/128/5.png
+
+
+* What we build?
+
+** split page and data
+   We will place the built static HTML in the corresponding location of .svelte-kit, and the data part will also be saved separately.
+
+   .image pic/128/6.png
+
+** when page update, we need to rebuild
+   Because it is static HTML, the page will not automatically update when there are changes in the data on the server. It needs to be rebuilt manually.
+
+   .image pic/128/7.png
+
+** preload mechanism
+   The preload mechanism will still work, but it will retrieve data from the .sveltekit instead of re-fetching it.
+
+   .image pic/128/8.png
+

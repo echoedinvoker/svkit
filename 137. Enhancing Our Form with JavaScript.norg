@@ -1,0 +1,55 @@
+@document.meta
+title: 137. Enhancing Our Form with JavaScript
+description: 
+authors: mattc
+categories: [
+  Form Enhancement
+  Input Field Reset
+  Server Hook
+]
+created: 2024-01-17T16:54:34+0800
+updated: 2024-01-17T16:55:15+0800
+version: 1.1.1
+@end
+
+* Input field reset issue
+
+** input field will reset after form submission by default
+   .image pic/135/1.png
+
+   Because HTML native form submission will reload the page, the input field will naturally reset.
+
+   .image pic/135/2.png
+
+   The above result meets the requirements most of the time, but if we want to retain the value of the input field when validation fails, what should we do?
+
+** if you don't want to reset, how to fix?
+   .image pic/135/3.png
+
+
+* use:enhance --> 
+
+** HTML form will reload page
+   .image pic/135/4.png
+
+** use:enhance
+   .image pic/135/5.png
+
+** what use:enhance does?
+   .image pic/135/6.png
+
+   One thing missing in the above picture is to replace redirect() with goto(), so it become client-side navigation. 
+
+** use it in layout forms
+   .image pic/135/7.png
+
+
+* Form actions may not trigger server hooks
+
+  We used to use endpoint for login and logout, which would trigger the server hook. However, there is a chance that the form actions we are currently using may not trigger the server hook. This is a bug.
+
+  .image pic/135/8.png
+
+  Therefore, for safety reasons, if using form actions, it is best to write the logic that originally needs to be handled in server hooks after submission in form actions as well.
+
+  .image pic/135/9.png

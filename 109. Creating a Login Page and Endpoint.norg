@@ -1,0 +1,36 @@
+@document.meta
+title: 109. Creating a Login Page and Endpoint
+description: 
+authors: mattc
+categories: [
+  Form
+  Login
+  Endpoint
+]
+created: 2024-01-11T08:59:58+0800
+updated: 2024-01-11T09:00:19+0800
+version: 1.1.1
+@end
+
+* Login UI
+
+  .image pic/109/1.png
+
+
+* Login endpoint & submit handler
+
+  .image pic/109/2.png
+
+
+* Test
+
+  .image pic/109/3.png
+
+  .image pic/109/4.png
+
+
+* The next plan.
+
+  Before, in the load function of +layout.server.ts in the root, we returned dummy user data. Next, in the login operation, we need to write the user data into the cookie. This way, +layout.server.ts in the root can retrieve the user data from the cookie and determine if the user is logged in.
+
+  .image pic/109/5.png

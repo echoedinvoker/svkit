@@ -1,0 +1,52 @@
+@document.meta
+title: 142. Building and Running Our App with the Node Adapter
+description: 
+authors: mattc
+categories: [
+  Build
+  Node server
+  Cross-side
+]
+created: 2024-01-22T11:22:05+0800
+updated: 2024-01-22T11:23:00+0800
+version: 1.1.1
+@end
+
+* Build node server
+
+  This part just needs to follow the document.
+
+** set adapter
+   .image pic/140/1.png
+
+** npm run build
+   .image pic/140/2.png
+
+   To ensure that the folder "build" has been generated.
+
+** npm ci --omit dev
+   Write the dependencies needed for production into the node_modules.
+
+   .image pic/140/3.png
+
+* Running node server locally
+
+** directly run it
+   .image pic/140/4.png
+
+** set HOST name
+   .image pic/140/5.png
+
+
+* Cross-side Request ISSUE
+
+** issue
+   .image pic/140/6.png
+
+** set ORIGIN
+   ORIGIN is the URL of the frontend.
+
+   .image pic/140/7.png
+
+
+   We will explain in the following lectures how to deploy this node server to a remote platform for operation.

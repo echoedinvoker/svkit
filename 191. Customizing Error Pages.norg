@@ -1,0 +1,58 @@
+@document.meta
+title: 191. Customizing Error Pages
+description: 
+authors: mattc
+categories: [
+  Error
+  Static Error Page
+  Error component
+]
+created: 2024-04-02T17:17:33+0800
+updated: 2024-04-02T17:18:17+0800
+version: 1.1.1
+@end
+
+* Custom static error page for root layout error
+
+** simulate error
+   .image pic/13.png
+
+** error.html
+   .image pic/14.png
+
+
+* Error page for routes
+
+** create +error.svelte
+*** simulate error
+    .image pic/15.png
+
+*** +error.svelte
+    .image pic/16.png
+
+    .image pic/17.png
+
+
+** contents for different error status
+
+*** 404 Not Found
+
+**** markup
+
+     .image pic/18.png
+**** styling
+
+     .image pic/19.png
+
+*** 401 Unauthorized
+
+**** markup
+     .image pic/20.png
+
+**** replace button of LogoutButton with Button
+     .image pic/21.png
+
+**** fix broken styling of LogoutButton where we used before
+     .image pic/22.png
+
+     .image pic/23.png

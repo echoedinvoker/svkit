@@ -1,0 +1,50 @@
+@document.meta
+title: 169. Adding a Tippy Theme and Styling The User Menu
+description: 
+authors: mattc
+categories: [
+  Tippy
+  Theme
+  Styling
+]
+created: 2024-02-02T18:12:24+0800
+updated: 2024-02-02T18:12:49+0800
+version: 1.1.1
+@end
+
+* Styling of Tippy box (Theme)
+
+  Tippy's styling is divided into two parts: box and contents. The box is determined by the theme, and we can either write our own theme or use the one provided by Tippy.
+
+** documents
+   .image pic/169/1.png
+
+** custom theme
+   .image pic/169/2.png
+
+
+* Styling of Tippy contents
+
+** ul
+   .image pic/169/3.png
+
+** li a
+   .image pic/169/4.png
+
+** li button
+   .image pic/169/5.png
+
+   .image pic/169/6.png
+
+** full width clicable
+   In order to make the entire width of each option clickable, we need to do the following styling.
+
+   .image pic/169/7.png
+
+   .image pic/169/8.png
+
+** li svg
+   .image pic/169/9.png
+
+** dynamic backgound color
+   .image pic/169/10.png

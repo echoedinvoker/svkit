@@ -1,0 +1,85 @@
+@document.meta
+title: 171. Pages' Title Tag, Skip Link and Pages' Loading Indicator
+description: 
+authors: mattc
+categories: [
+  Title
+  Loading bar
+  Skip to main content
+  Programmatically close Tippy
+]
+created: 2024-02-04T15:44:48+0800
+updated: 2024-02-04T15:45:24+0800
+version: 1.1.1
+@end
+
+* Dynamic title of page
+
+** static part
+   .image pic/171/1.png
+
+** dynamic part
+   .image pic/171/2.png
+
+** type safe of title
+   .image pic/171/3.png
+
+
+* Skip to main content link
+
+** issue
+   When we use TAB, starting from the top of the HTML, it wastes a lot of time before reaching the main content. Therefore, we need to add a link at the beginning that can directly jump to the main content.
+
+   .image pic/171/4.png
+
+** add link
+   .image pic/171/5.png
+
+** styling
+
+*** hidden when not focus
+    .image pic/171/6.png
+
+*** styling when been focued
+    .image pic/171/7.png
+
+* Loading bar of navigation
+
+** demand
+   .image pic/171/8.png
+
+** indstall
+   .image pic/171/9.png
+
+   nprogress is a package that is written entirely in JavaScript, so you need to load @types/nprogress in order to use it correctly.
+
+   .image pic/171/10.png
+
+** implement
+   .image pic/171/11.png
+
+** remove spinner by configure
+   .image pic/171/12.png
+
+** styling by main.scss
+   .image pic/171/13.png
+
+   .image pic/171/14.png
+
+
+* Programmatically close Tippy
+
+** prepare /profile page
+   .image pic/171/15.png
+
+   .image pic/171/16.png
+
+** plugin: HideOnPupperBlur effect
+   .image pic/171/17.png
+
+   .image pic/171/18.png
+
+** switch to close programmatically
+   .image pic/171/19.png
+
+   .image pic/171/20.png

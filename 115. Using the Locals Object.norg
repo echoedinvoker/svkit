@@ -1,0 +1,30 @@
+@document.meta
+title: 115. Using the Locals Object
+description: 
+authors: mattc
+categories: [
+  Hook
+  locals
+  Token
+]
+created: 2024-01-14T10:49:54+0800
+updated: 2024-01-14T10:50:26+0800
+version: 1.1.1
+@end
+
+* Locals
+
+** What is locals
+   The property "locals" of the event in the "hand function" is an object that can be used to store data. This data can be shared among all the "Server Load" functions.
+
+** Common usage
+   Common usage is as follows: because previously we checked the token in root +layout.server.ts, but the layout will only be executed once when the app starts, and then it will not be executed again. Therefore, we can move the token check operation to the server hook and store the result in locals. This way, we can check the token every time we receive a request and store it in locals, so that we can easily share the result of the token check with all server load functions.
+
+   .image pic/115/1.png
+
+   Note that if we use locals, we must define its type in app.d.ts. If the content being stored is not clear, we can just use the type 'object'.
+
+
+** Conditionally check token
+   Of course, we can add some conditions to determine whether to check the token. For example, we often use the event's isDataRequest or url.pathname as conditions.
+

@@ -1,0 +1,69 @@
+@document.meta
+title: 135. Redirecting in Form Actions
+description: 
+authors: mattc
+categories: [
+  Redirect
+  Form Actions
+]
+created: 2024-01-17T14:51:11+0800
+updated: 2024-01-17T14:51:35+0800
+version: 1.1.1
+@end
+
+* Redirect when forms actions success
+
+** review previous codes
+   In the previous lecture, we returned an object at the end of the form actions for teaching purposes. In reality, when the form actions are successful, it should redirect to "/".
+
+   .image pic/133/1.png
+
+* throw redirect()
+  Implementing redirection in form actions is very simple, just use `throw redirect()`
+
+  .image pic/133/2.png
+
+** test
+   .image pic/133/3.png
+
+   .image pic/133/4.png
+
+
+* Login in non-login page, require to redirect to current page
+
+** test to login in non-login page
+   .image pic/133/5.png
+
+   .image pic/133/6.png
+
+   As above, according to the codes in form actions, no matter where we log in, we will be redirected to "/". However, if we want to only reload the page when logging in on other pages, how can we do that?
+
+
+** add query string by form attr 'action'
+   On other pages, we can use the 'action' attribute of the form tag to add a string query to transfer the current page path to the form actions.
+
+   .image pic/133/7.png
+
+** test again
+   .image pic/133/8.png
+
+   .image pic/133/9.png
+
+
+* Test in non-javascript environment
+
+  Since we have already changed the login process to use form actions, we can now log in without using javascript. Let's test it out.
+
+  .image pic/133/10.png
+
+  .image pic/133/11.png
+
+
+
+* Why logout button is not working?
+
+  .image pic/133/13.png
+
+  .image pic/133/12.png
+
+  As mentioned above, the logout button we use relies on the fetch() function used on the client side. However, in an environment without JavaScript, fetch() cannot be used, causing the logout button to become ineffective.

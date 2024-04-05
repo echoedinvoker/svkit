@@ -1,0 +1,58 @@
+@document.meta
+title: 179. Creating a Card Component
+description: 
+authors: mattc
+categories: [
+  Image
+  Styling
+  Transition
+  Hover
+  Lucide
+]
+created: 2024-02-12T23:56:46+0800
+updated: 2024-02-12T23:57:34+0800
+version: 1.1.1
+@end
+
+* Demand
+
+.image pic/179/1.png
+
+
+* Create Card component and using it
+
+.image pic/179/2.png
+
+As mentioned above, we will also use the Card to present the artist, but only for the artist with the full object.
+
+
+* Complete content of Card
+
+.image pic/179/3.png
+
+Note that we are using lazy loading for the images, so only the images within the viewport will be loaded. This helps reduce the loading time of the webpage.
+
+
+* Styling cover
+
+.image pic/179/4.png
+
+  We use % width to img so that it can change along with the width of .card, and .card is determined by the grid layout.
+
+
+* Styling cover placeholder
+
+.image pic/179/5.png
+
+
+* Hover effect
+
+What needs to be noted here is that in addition to the background color of .card itself changing, the background color of lucide svg also needs to change accordingly.
+
+.image pic/179/6.png
+
+
+* Space between sections
+
+.image pic/179/7.png
+

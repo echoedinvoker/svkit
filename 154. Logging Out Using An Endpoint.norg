@@ -1,0 +1,86 @@
+@document.meta
+title: 154. Logging Out Using An Endpoint
+description: 
+authors: mattc
+categories: [
+  Logout
+  Endpoint
+  Submit
+  Form
+  Redirect
+  Invalidate
+]
+created: 2024-01-23T21:10:53+0800
+updated: 2024-01-23T21:11:27+0800
+version: 1.1.1
+@end
+
+* Logout submit button
+
+** form with submit button
+   We use the submit of the form to create the logout function. This method allows for more flexibility by choosing form actions or endpoints instead of simply clicking a button.
+
+   .image pic/154/1.png
+
+** endpoint
+   Afterwards, we will extensively use form actions, so here we use an endpoint for demonstration.
+
+   .image pic/154/2.png
+
+** test
+   .image pic/154/3.png
+
+   .image pic/154/4.png
+
+
+* fetch to endpoint
+
+  In addition to form requests, we can also use the fetch API to send requests. This method will only be used in environments with JavaScript. When both form requests and the fetch API are available, the environment with JavaScript will automatically choose to use fetch.
+
+  .image pic/154/5.png
+
+
+* Middle Test 
+
+  .image pic/154/6.png
+
+  .image pic/154/7.png
+
+  In a JavaScript environment, the app will use fetch to trigger the endpoint. However, this method cannot allow the redirect() function in the endpoint to perform navigation.
+
+
+* Build redirect for fetch javascript
+
+  So we have to write the redirection logic ourselves on the front end.
+
+  .image pic/154/8.png
+
+  Although the redirect() method of the endpoint cannot navigate, the response will still have an additional attribute called redirected: true. This way, we can know whether navigation should be performed. Of course, we can also continue using response.ok to determine.
+
+  .image pic/154/9.png
+
+  We can use `window.location.href` in the frontend as shown in the figure above to perform redirection. This method is exactly the same as the `redirect()` function in the endpoint and will also reload the page. However, since we have JavaScript, we prefer to use `invalidateAll()` which does not reload the page. This way, the user experience will be better.
+
+
+* Test
+
+  .image pic/154/10.png
+
+  .image pic/154/11.png
+
+
+
+* Refactor form button to component
+
+  Because we want to use the logout button on different pages, we extracted it and turned it into a component.
+
+** refactor to component
+   .image pic/154/12.png
+
+** Alias
+   .image pic/154/13.png
+
+** Add index.ts for named export
+   The component is default exported by default. We use index.ts to convert it into a named export so that we can enjoy the benefits of auto import.
+
+   .image pic/154/14.png

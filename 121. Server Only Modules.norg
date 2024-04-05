@@ -1,0 +1,30 @@
+@document.meta
+title: 121. Server Only Modules
+description: 
+authors: mattc
+categories: [
+  Server Only Modules
+  Security
+]
+created: 2024-01-14T15:13:52+0800
+updated: 2024-01-14T15:14:13+0800
+version: 1.1.1
+@end
+
+* Build module only for server file
+
+  Sometimes we have some self-written modules that we only want to run on the server side. In this case, we can add the `.server` part to the name of this module to avoid it being imported and used in client files.
+
+  .image pic/121/1.png
+
+
+* Lib folder only for server file
+
+  We can achieve the same effect by creating a `server` folder in `/lib`. All modules within this folder can only be imported into the server file.
+
+  .image pic/121/2.png
+
+
+* Note, it will be pushed to repository
+
+  It should be noted that although these modules cannot be imported by the client-side, they will be pushed to the repository. Therefore, if there are sensitive data such as API keys, it is best to handle them using environment variables.

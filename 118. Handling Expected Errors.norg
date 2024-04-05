@@ -1,0 +1,54 @@
+@document.meta
+title: 118. Handling Expected Errors
+description: 
+authors: mattc
+categories: [
+  Error Handling
+  Expected Error
+  Error Page
+]
+created: 2024-01-14T12:51:19+0800
+updated: 2024-01-14T12:51:44+0800
+version: 1.1.1
+@end
+
+> There are two types of errors: expected errors and unexpected errors. This lecture mainly introduces the handling methods for expected errors.
+
+* Default error page
+
+  When we throw an error, SvelteKit will automatically render an error page for the user to see.
+
+  .image pic/117/1.png
+
+
+* Root custom error page
+
+  We can create +error.svelte at the root route to replace the default error page.
+
+  .image pic/117/2.png
+
+
+* Route custom error page
+
+  After the error occurs, it will be passed layer by layer to the upper level route until it finds +error.svelte, where it will be handled by that +error.svelte.
+
+  .image pic/117/3.png
+
+  .image pic/117/4.png
+
+
+* Fallback error.html
+
+  If an error occurs in the root route, or even in the +error.svelte itself in the root route, the error rendering will fallback to error.html.
+
+  .image pic/117/5.png
+
+  .image pic/117/6.png
+
+
+* How about error happend in endpoint (+server.ts)?
+
+  If the error comes from the endpoint, you must determine which page requested this endpoint, and then decide which +error.svelte should be used to handle the error based on the rules of the page's error handling.
+
+  .image pic/117/7.png
+

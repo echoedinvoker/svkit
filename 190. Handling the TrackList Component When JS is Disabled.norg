@@ -1,0 +1,64 @@
+@document.meta
+title: 190. Handling the TrackList Component When JS is Disabled
+description: 
+authors: mattc
+categories: [
+  no-js
+  RWD
+  small-screen
+  Player
+]
+created: 2024-03-29T17:24:18+0800
+updated: 2024-03-29T17:24:51+0800
+version: 1.1.1
+@end
+
+* Design no-js mode
+
+  Next, we need to design the styles of tracks in the case of no-js.
+
+  .image pic/1.png
+
+
+* In no-js mode, hide the play button instead of player
+
+  Before, we hid the HTML player and used a button to trigger its function. However, in the absence of JavaScript, the button function would be completely disabled, so we need to change it to hide the button and use the HTML player instead.
+
+  .image pic/2.png
+
+  .image pic/3.png
+
+  .image pic/4.png
+
+
+* In the small screen no-js mode, the items in a track are arranged vertically and some spaces
+
+  .image pic/5.png
+
+
+* Remove title in small screen no-js
+
+  .image pic/6.png
+
+  .image pic/12.png
+
+
+* Make number, info, duration width 100% and some spaces
+
+  .image pic/7.png
+
+  .image pic/8.png
+
+
+* No longer need to hide the number when hovering in no-js
+
+  .image pic/9.png
+
+  .image pic/10.png
+
+
+* Check big screen situation
+
+  .image pic/11.png
+
+  It looks good.

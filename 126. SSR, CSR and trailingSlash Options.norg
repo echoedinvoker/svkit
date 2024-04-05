@@ -1,0 +1,58 @@
+@document.meta
+title: 126. SSR, CSR and trailingSlash Options
+description: 
+authors: mattc
+categories: [
+  SSR
+  CSR
+  Trailing Slash
+]
+created: 2024-01-15T13:35:12+0800
+updated: 2024-01-15T13:35:48+0800
+version: 1.1.1
+@end
+
+* SSR & CSR Default setting
+
+  SvelteKit defaults to generating pages through server-side rendering and then handing over the subsequent functionality to the client side. This handover process is referred to as hydration.
+
+  .image pic/126/1.png
+
+  We can enable or disable SSR & CSR as mentioned above in +page.ts or +page.server.ts.
+
+
+* SSR & CSR custom setting and results
+
+** only CSR
+   .image pic/126/2.png
+
+** no SSR & CSR
+   .image pic/126/3.png
+
+   We should never shut down SSR and CSR at the same time.
+
+** only SSR
+   .image pic/126/4.png
+
+   The above situation, because it uses {#await}, requires on client-side codes to perform subsequent operations. This app cannot be used in an environment without Javascript.
+
+
+* Trailing Slash
+
+  .image pic/126/5.png
+
+  .image pic/126/6.png
+
+  .image pic/126/7.png
+
+
+* Set SSR & CSR in the layout
+
+** implement
+   .image pic/126/8.png
+
+** test
+   .image pic/126/9.png
+
+   .image pic/126/10.png
+

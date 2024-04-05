@@ -1,0 +1,40 @@
+@document.meta
+title: 100. Server Only Load Functions
+description: 
+authors: mattc
+categories: [
+  Loading data
+  Server Loading
+  Mix server and client loading
+]
+created: 2024-01-08T14:05:13+0800
+updated: 2024-01-08T14:06:03+0800
+version: 1.1.1
+@end
+
+* +page.server.ts
+
+  .image pic/100/1.png
+
+  We previously used +page.ts as mentioned above, where the codes will be executed on both the server and the client. But sometimes, how can we handle sensitive data that we only want to execute on the server?
+
+  We can change +page.ts to +page.server.ts. Please note that the type PageLoad should be changed to PageServerLoad.
+
+  .image pic/100/2.png
+
+
+* Mix +page.ts with +page.server.ts
+
+  We can also mix and use both at the same route.
+
+  .image pic/100/3.png
+
+  The reason we get 500 is because when using +page.ts and +page.server.ts at the same time, the props 'data' of +page.svelte will come from +page.ts instead of +page.server.ts.
+  However, the function 'load' in +page.ts can obtain the return value of +page.server.ts in the callback's params. Therefore, we can write it as follows.
+
+  .image pic/100/4.png
+
+  The +page.ts can also be used to manage the UI state of the page, distinguishing it from +page.server.ts.
+
+  .image pic/100/5.png
+

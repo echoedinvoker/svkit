@@ -1,0 +1,52 @@
+@document.meta
+title: 170. Improving Tippy By Adding Tippy Plugins
+description: 
+authors: mattc
+categories: [
+  Tippy
+  Plugins
+]
+created: 2024-02-02T19:01:43+0800
+updated: 2024-02-02T19:02:06+0800
+version: 1.1.1
+@end
+
+* More Tippy demands
+
+  We found that there are some Tippy requirements that cannot be achieved with the existing Tippy.
+
+  .image pic/170/1.png
+
+  .image pic/170/2.png
+
+  The above is an example. Additionally, we also hope that when focusing on a Tippy item, clicking ESC or opening another Tippy will automatically close the Tippy.
+
+
+
+* Tippy plugins documentation
+
+  When we want to increase Tippy's functionality, we can use Tippy's plugin to achieve it.
+
+  .image pic/170/3.png
+
+
+* Create typpy-plugin.js and refactor typpy folder architecture
+
+  Lectures helped us write a custom tippy plugin, and we need to place it in the corresponding location.
+
+  .image pic/170/4.png
+
+
+* Change Props type with ExpendedProps
+
+  .image pic/170/5.png
+
+
+* Combine plugins to our original options
+
+  .image pic/170/6.png
+
+
+* Set to false in component if we don't want plugin to be used
+
+  .image pic/170/7.png

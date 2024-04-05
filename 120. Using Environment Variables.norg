@@ -1,0 +1,57 @@
+@document.meta
+title: 120. Using Environment Variables
+description: 
+authors: mattc
+categories: [
+  Environment Variables
+]
+created: 2024-01-14T14:37:38+0800
+updated: 2024-01-14T14:37:54+0800
+version: 1.1.1
+@end
+
+* Setting environment variables
+
+** machine environment variables
+   .image pic/120/1.png
+
+   .image pic/120/2.png
+
+** project environment variables
+   .image pic/120/3.png
+
+   Environment variables are divided into public and private. The difference is that the public environment variables are prefixed with PUBLIC_.
+
+
+* We cannot import private environment variables in the any client side files
+
+  In the previous mention, environment variables are distinguished as public and private by using the prefix PUBLIC_. When we import any private environment variables on the client side, an error will occur.
+
+  .image pic/120/4.png
+
+
+* Dynamic import
+
+  In addition to the distinction between private and public environment variables, imports also have a distinction between static and dynamic.
+
+  If the value of the environment variable of dynamic import changes, the app will also be automatically updated. However, the drawback is that some platforms cannot use dynamic import to obtain the value of the environment variable.
+
+  .image pic/120/5.png
+
+  .image pic/120/6.png
+
+
+* Static import 
+
+  The difference with Dynamic import is that, when any environment variable changes, the value will only be updated after rebuilding.
+
+  Although there is no movement, it can be guaranteed that a certain value can be obtained.
+
+  .image pic/120/7.png
+
+  Note, static import directly get the environment variable name rather than the 'env'.
+
+
+* Performance considerations
+
+  The performance of importing public static environment variables is optimal. It is advisable to avoid transmitting environment variables from the server to the client unnecessarily, as it may cause meaningless loading.

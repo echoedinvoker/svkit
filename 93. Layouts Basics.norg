@@ -1,0 +1,49 @@
+@document.meta
+title: 93. Layouts Basics
+description: 
+authors: mattc
+categories: [
+  Layouts
+]
+created: 2024-01-06T18:14:48+0800
+updated: 2024-01-06T18:14:56+0800
+version: 1.1.1
+@end
+
+* Requirement of fixed contents of the pages
+
+  .image pic/93/1.png
+
+
+* Layout
+
+** entry become +layout from +page
+   When we use +layout, the route will no longer look for +page, but instead for +layout. Therefore, in +layout, we must use <slot /> to load the content of +page.
+
+   .image pic/93/2.png
+
+   .image pic/93/3.png
+
+** scope of layout
+   The scope of the layout is the current route and all of its child routes.
+
+   .image pic/93/4.png
+
+   .image pic/93/5.png
+
+
+* Nested Layout
+
+  We can add +layout in the subroute, so that certain routes will have two layers of layout content.
+
+  .image pic/93/6.png
+
+  .image pic/93/7.png
+
+
+* The range of influence of the layouts
+
+  We use styled div to give these two layers different background colors and borders, so that we can clearly see the scope of the layouts on the page.
+
+  .image pic/93/8.png
+

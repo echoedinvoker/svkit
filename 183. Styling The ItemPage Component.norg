@@ -1,0 +1,80 @@
+@document.meta
+title: 183. Styling The ItemPage Component
+description: 
+authors: mattc
+categories: [
+  Styling
+  Album
+  Cover
+  Background color
+  Gradient
+]
+created: 2024-02-22T00:50:11+0800
+updated: 2024-02-22T00:50:36+0800
+version: 1.1.1
+@end
+
+* Layout banner (cover and info)
+
+** scss
+   .image pic/183/1.png
+
+** check result
+*** small screen
+    .image pic/183/2.png
+
+*** large screen
+    .image pic/183/3.png
+
+* Styling album cover img
+
+  .image pic/183/4.png
+
+  .image pic/183/5.png
+
+
+* Styling album placeholder icon
+
+  .image pic/183/6.png
+
+  .image pic/183/7.png
+
+
+* Styling infos
+
+  .image pic/183/8.png
+
+
+* Styling meta info
+
+  .image pic/183/9.png
+
+
+* Background color
+
+** not only fit while banner, but further down to the content
+   .image pic/183/10.png
+
+** let img and info on top of background color
+   .image pic/183/11.png
+
+** let banner background to cover whole page
+   .image pic/183/12.png
+
+   .image pic/183/13.png
+
+   .image pic/183/14.png
+
+** test change background color by props
+   .image pic/183/17.png
+
+
+* Check small screen styling
+
+  .image pic/183/15.png
+
+  It looks like there is a lack of space below the cover, so we will fill it in.
+
+  .image pic/183/16.png
+
+  Please remember to reset the margin-bottom to 0 at `breakpoint.up('sm')` becuase only needs to be adjusted for small screens.

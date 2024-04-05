@@ -1,0 +1,69 @@
+@document.meta
+title: 180. Creating a Card Component (Cont.)
+description: 
+authors: mattc
+categories: [
+  Styling
+  Card
+  For loop of SCSS
+  Truncate
+  Focus
+  Anchor after
+]
+created: 2024-02-13T00:58:05+0800
+updated: 2024-02-13T00:58:56+0800
+version: 1.1.1
+@end
+
+* Complete card contents
+
+  In addition to the image, the card also needs to display the item type, name, artists, and description. We will add them to the card.
+
+  .image pic/180/1.png
+
+
+* Layout of height
+
+  The above results show that each card has inconsistent heights due to the content, which is a layout issue.
+
+  .image pic/180/2.png
+
+
+* Styling the card
+
+  .image pic/180/3.png
+
+
+* Anchor click effect on whole card
+
+  We hope that the entire card can be clickable, but wrapping the card with `<a>` is not a good practice. We can achieve this effect by using the pseudo-element `::after`.
+
+  .image pic/180/4.png
+
+
+* Focused outline on whole card
+
+  .image pic/180/5.png
+
+  .image pic/180/6.png
+
+
+* Let p text selectable
+
+** demand
+   .image pic/180/7.png
+
+** relative position to make p on top
+   .image pic/180/8.png
+
+
+* Truncate text
+
+** demand
+   .image pic/180/9.png
+
+** for loop of SCSS
+   .image pic/180/10.png
+
+** using it
+   .image pic/180/11.png

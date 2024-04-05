@@ -1,0 +1,44 @@
+@document.meta
+title: 116. The handleFetch Hook
+description: 
+authors: mattc
+categories: [
+  Hook
+  HandleFetch
+  Cross-site cookie
+  Replace request url
+  Token
+  Cookie
+]
+created: 2024-01-14T11:53:27+0800
+updated: 2024-01-14T11:53:58+0800
+version: 1.1.1
+@end
+
+* hook: handleFetch
+
+  In addition to the Handle function used to modify the response hook, there are other types of hooks that can be used. For example: handleFetch.
+
+  handleFetch can modify the request object of fetch, such as request.url, request.headers, request.method, request.body.
+
+  .image pic/116/2.png
+
+
+* Usage case: cross-site cookie
+
+** issue
+   .image pic/116/1.png
+
+** solve by handleFetch
+   .image pic/116/3.png
+
+   Note that our cookie above is HTTPOnly, so it cannot be directly accessed. However, it can be obtained in the headers of the current page. Therefore, we use `event.headers.get('cookie')` to retrieve the cookie being used on the page and transfer it to the request header of the fetch request.
+
+* Another usage case: replace request url
+
+  This example is a sample used in the handleFetch section of the SvelteKit document. Link: [Link]{https://kit.svelte.dev/docs/hooks#server-hooks-handlefetch}
+
+  .image pic/116/4.png
+
+  Some requests may be sent from the client or server. When it is necessary to change the domain to localhost for server-side requests, we can use the above method to replace the URL.
+

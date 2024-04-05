@@ -1,0 +1,70 @@
+@document.meta
+title: 166. Finalizing Our Mobile Navigation Menu
+description: 
+authors: mattc
+categories: [
+  Icon Button
+  Stlying
+  SEO
+]
+created: 2024-01-30T15:23:30+0800
+updated: 2024-03-20T22:51:07+0800
+version: 1.1.1
+@end
+
+* Replace buttons with IconButton but focus switch not work
+
+** implement
+   .image pic/166/1.png
+
+   .image pic/166/2.png
+
+** issue happen
+   .image pic/166/3.png
+
+   .image pic/166/4.png
+
+** solve issue
+   Because IconButton does not have the method 'focus', we need to expose the button within it.
+
+   .image pic/166/5.png
+
+
+* Styling IconButton
+
+** demand
+   .image pic/166/6.png
+
+   .image pic/166/7.png
+
+** styling
+   .image pic/166/8.png
+
+** result
+   .image pic/166/9.png
+
+   .image pic/166/10.png
+
+
+* SEO Issue: double nav
+
+** explaination
+   Because we load two navs (menu and sidebar), this is not good for SEO.
+
+   .image pic/166/11.png
+
+** `{#if browser}`
+   I actually don't understand the reason here.
+
+   .image pic/166/12.png
+
+
+* Issue: topbar not opacity=0 at start
+
+** explaination
+   .image pic/166/13.png
+
+   .image pic/166/14.png
+
+** solve by string template
+   .image pic/166/15.png

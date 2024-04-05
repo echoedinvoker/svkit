@@ -1,0 +1,70 @@
+@document.meta
+title: 152. Populating the Root Layout With The Logged in Spotify User
+description: 
+authors: mattc
+categories: [
+  Access Token
+  Cookie
+  Type safety
+  LayoutData
+  LayoutServerLoad
+  LayoutLoad
+  Redirect
+]
+created: 2024-01-22T20:47:11+0800
+updated: 2024-01-22T20:47:56+0800
+version: 1.1.1
+@end
+
+* Get access token from cookie
+
+  We can only obtain HTTPOnly cookies on the server side, so we must obtain the access token on +layout.server.ts.
+
+  .image pic/152/1.png
+
+** There is no access token
+   .image pic/152/2.png
+
+** There is access token
+   In the case of having an access token, we will proceed to use it to obtain the user's information.
+
+   .image pic/152/3.png
+
+
+* Type safety
+
+** define type
+   We can define the type after the app.d.ts and profile variables. The type for Spotify can be obtained from the package @types/spotify-api.
+
+   .image pic/152/4.png
+
+   It can be noticed that a type warning has occurred because we have not yet returned the case of profile response failed.
+
+** fix type warning
+   .image pic/152/5.png
+
+
+* Using user data on page by LayoutData
+
+  .image pic/152/6.png
+
+
+* Redirect both on client and server
+
+  We need to redirect the page based on whether the access token is valid. This must be written in +layout.ts because +layout.ts operates on both the client and server side, so that it can affect both client and server side navigation at the same time.
+
+  .image pic/152/7.png
+
+
+* Test redirect
+
+** invalid access token
+   .image pic/152/8.png
+
+   .image pic/152/9.png
+
+** valid access token
+   .image pic/152/10.png
+
+   .image pic/152/11.png
+

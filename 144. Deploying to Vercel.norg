@@ -1,0 +1,55 @@
+@document.meta
+title: 144. Deploying to Vercel
+description: 
+authors: mattc
+categories: [
+  Vercel
+  Adapter
+  Deploy
+  Environment variables
+]
+created: 2024-01-22T13:18:49+0800
+updated: 2024-01-22T13:24:20+0800
+version: 1.1.1
+@end
+
+* Adapter for Vercel
+
+  adapter-auto already includes Vercel, but options cannot be used.
+
+  .image pic/142/1.png
+
+
+* Deploy to Vercel with Import from GitHub
+
+  .image pic/142/2.png
+
+  .image pic/142/3.png
+
+
+* Deploy to Vercel with Vercel CLI
+
+  If you don't want to import from GitHub, we can deploy from local using Vercel CLI.
+
+  .image pic/142/4.png
+
+  .image pic/142/5.png
+
+  .image pic/142/6.png
+
+  .image pic/142/7.png
+
+  .image pic/142/8.png
+
+
+* Set environment variables on Vercel
+
+  When we use `vercel --prod`, the content of .env will be built together. It can be changed to setting environment variables on the Vercel website.
+
+  .image pic/142/9.png
+
+  .image pic/142/10.png
+
+  .image pic/142/11.png
+
+  .image pic/142/12.png

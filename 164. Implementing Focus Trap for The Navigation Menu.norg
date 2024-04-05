@@ -1,0 +1,56 @@
+@document.meta
+title: 164. Implementing Focus Trap for The Navigation Menu
+description: 
+authors: mattc
+categories: [
+  Focus Trap
+  Const Props
+  Escape
+  Exit
+]
+created: 2024-01-30T11:28:35+0800
+updated: 2024-01-30T11:29:16+0800
+version: 1.1.1
+@end
+
+* Focus Trap
+
+  When we open the menu, we would like the focus to only switch between the items inside the menu, and not focus on things on the page.
+
+** demand
+   .image pic/164/1.png
+
+** bind elements
+   .image pic/164/2.png
+
+   .image pic/164/3.png
+
+** refactor repeat codes
+   In the markup section of Svelte, if duplicate attributes are found, they can be extracted by using `{@const}` inside an object and processed using the `spread` operator.
+
+   .image pic/164/4.png
+
+   .image pic/164/5.png
+
+   .image pic/164/6.png
+
+   Pay attention to the issue of switching value types and whether it is possible to remove the `{@const}` in the course video, which is also defined within the `{#each}`.
+
+** fix little bug
+   .image pic/164/7.png
+
+   .image pic/164/8.png
+
+** bind event with handler function
+   .image pic/164/9.png
+
+
+* ESC to close menu
+
+  We hope that when the menu is opened and the focus is on an item within the menu, we can directly press ESC to close the menu.
+
+** implement
+   .image pic/164/10.png
+
+** remove warning
+   .image pic/164/11.png

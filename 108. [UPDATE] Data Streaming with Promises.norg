@@ -1,0 +1,40 @@
+@document.meta
+title: 108. [UPDATE] Data Streaming with Promises
+description: 
+authors: mattc
+categories: [
+  SSR
+  +page.server.ts
+  Streaming
+]
+created: 2024-01-10T23:19:28+0800
+updated: 2024-01-10T23:19:52+0800
+version: 1.1.1
+@end
+
+* Replace dummy data with fetching API in +page.server.ts
+
+  .image pic/108/1.png
+
+  .image pic/108/2.png
+
+
+* Streaming data to page
+
+  Next, we need to fetch another API to get comments data. Assuming there are a lot of comments data, if we await in +page.server.ts, it will cause a problem of blocking page loading. Therefore, we directly return the promise of comments in +page.server.ts.
+
+  .image pic/108/3.png
+
+  Directly return the promise to +page.svelte and use {#await} to handle it, so that page will not be blocked by comments data.
+
+  .image pic/108/4.png
+
+  It is better to only use the "return promise" in the backend and not in the +page.ts. This is because the load function will trigger page rendering, and the content of +page.ts will be executed together. If the asynchronous function is placed in +page.ts, it will generate an additional promise.
+
+
+* Difference from course vdieo
+
+  In the course video, if the load function directly assigns a promise at the top level of the return object, the backend will wait for the promise to be resolved before sending it to the client. However, it seems that this feature has been canceled in my actual implementation.
+
+  So the use of nested structures in course videos to avoid the automatic waiting of top level property promise seems unnecessary in my actual implementation.
+

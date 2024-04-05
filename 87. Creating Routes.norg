@@ -1,0 +1,57 @@
+@document.meta
+title: 87. Creating Routes
+description: 
+authors: mattc
+categories: [
+  Routing
+  Page
+  Navigation
+]
+created: 2024-01-06T09:51:16+0800
+updated: 2024-01-06T09:56:19+0800
+version: 1.1.1
+@end
+
+* Route with folder structure and +page.svelte
+
+  .image pic/87/1.png
+
+  There must be a `+page.svelte` file in the folder for it to become a page on the app, otherwise it will be treated as a regular folder.
+
+
+* Navigate between pages
+
+  The syntax for navigation between different pages in SvelteKit is the same as native HTML, using `<a href="...">`. However, in the presence of JavaScript, the browser will not reload the webpage but instead use SvelteKit's routing system for navigation.
+
+  .image pic/87/2.png
+
+
+* Prove that Svelte is progressive and SSR
+
+  We turn off the JavaScript functionality of Chrome and then enter the URL in the address bar. We will find that the webpage can still function properly. This is because SvelteKit is progressive, which means it can operate without JavaScript in the environment.
+
+  .image pic/87/3.png
+
+  If we further inspect the source code of each page, we will find that the HTML of each page is rendered by the server. This is SSR (Server-Side Rendering), so by using SvelteKit's SSR feature, we can ensure that every page is SEO friendly.
+
+
+* URL params
+
+  The information of each page itself will be stored in the page store, which is a type of store, so it can be accessed using $page.
+
+** page store
+   .image pic/87/4.png
+
+** render params & navigate with params
+   .image pic/87/5.png
+
+   .image pic/87/6.png
+
+
+* Change root folder name
+
+  If necessary, the name of the 'routes' folder can also be changed.
+
+  .image pic/87/7.png
+
+

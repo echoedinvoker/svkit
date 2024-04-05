@@ -1,0 +1,38 @@
+@document.meta
+title: 186. The TrackList Component Markup
+description: 
+authors: mattc
+categories: [
+
+]
+created: 2024-02-29T20:24:37+0800
+updated: 2024-02-29T20:25:11+0800
+version: 1.1.1
+@end
+
+* Refactor track list to a component
+
+  We need to use dedicated components to construct the tracks.
+
+  .image pic/186/1.png
+
+  .image pic/186/2.png
+
+
+* Track header row
+
+  In this lecture, we will first only write out the DOM elements, without doing any styling.
+
+  .image pic/186/3.png
+
+
+* Track rows
+
+  .image pic/186/4.png
+
+
+* Duration column: ms to time strings 
+
+  .image pic/186/5.png
+
+  .image pic/186/6.png

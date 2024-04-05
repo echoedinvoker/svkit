@@ -1,0 +1,45 @@
+@document.meta
+title: 88. The lib Folder Alias and Custom Aliases
+description: 
+authors: mattc
+categories: [
+  lib
+  Alias
+]
+created: 2024-01-06T10:36:00+0800
+updated: 2024-01-06T10:36:27+0800
+version: 1.1.1
+@end
+
+* Global used component
+
+  Because of the routes folder structure, some pages are located in very deep folders. In this case, it would be troublesome to import global components. Therefore, SvelteKit provides $lib to solve this problem.
+
+  .image pic/88/1.png
+
+
+* More complex lib structure & alias
+
+  Of course, we can create more complex directory structures in the lib.
+
+  .image pic/88/2.png
+
+  We can also create aliases for these directories.
+
+  .image pic/88/3.png
+
+
+* index.ts
+
+  If there are many components under a certain folder, and it is often necessary to import multiple components at once, you can create an index.ts file under the folder. This way, you can use a simpler syntax to import the components.
+
+  .image pic/88/4.png
+
+
+* Local component for specific page
+
+  If there are some components that are only used on a specific page, they are usually directly placed in the folder of that page.
+
+  .image pic/88/5.png
+
+  In a SvelteKit app, when loading a page, it will enter from +page.svelte. Other components will be ignored, so all components except +page.svelte must be imported from +page.svelte in order to be used.

@@ -1,0 +1,87 @@
+@document.meta
+title: 161. Creating the Top Bar and Animating it On Scroll
+description: 
+authors: mattc
+categories: [
+  Top Bar
+  Style priority
+  RWD
+  Fixed position
+  Dynamic opacity
+]
+created: 2024-01-25T16:48:21+0800
+updated: 2024-01-25T16:49:06+0800
+version: 1.1.1
+@end
+
+* Top bar
+
+** Create top bar
+.image pic/161/1.png
+
+.image pic/161/2.png
+
+Pay attention to the differences and their meanings between the top bar and the navigation position.
+
+** Let top bar stay on top by fixed position
+.image pic/161/3.png
+
+.image pic/161/4.png
+
+Because fixed position can cause overlapping of different elements, `z-index` should be added to adjust.
+
+** Space styling
+.image pic/161/5.png
+
+We have increased the space in all directions, so naturally we need to use flex to center the content.
+
+** RWD x side padding
+.image pic/161/6.png
+
+** 100% width issue when using fixed position
+.image pic/161/7.png
+
+When using fixed position, if width: 100 is used, it will become 100 of the viewport instead of 100 of the parent element. Therefore, the width of the sidebar needs to be subtracted in order to prevent the right side of the top bar from exceeding the viewport.
+
+.image pic/161/8.png
+
+
+* Backgournd of top bar
+
+** demand
+.image pic/161/9.png
+
+.image pic/161/10.png
+
+** set background in separate div
+Because the background of the top bar is dynamic, we create a separate div element to design the background. This way, we can add the dynamic style to this div using inline style.
+
+.image pic/161/11.png
+
+** add top bar height to content page top padding
+
+*** issue
+  .image pic/161/12.png
+
+*** priority issue
+  .image pic/161/13.png
+
+*** only add when logged
+  .image pic/161/14.png
+
+What needs to be noted here is the issue of CSS style priority.
+
+** dynamic opacity
+
+*** get value of opacity
+  .image pic/161/15.png
+
+  .image pic/161/16.png
+
+*** using it to inline-style and test
+  .image pic/161/17.png
+
+  .image pic/161/18.png
+
+  .image pic/161/19.png
+

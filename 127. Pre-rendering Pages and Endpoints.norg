@@ -1,0 +1,59 @@
+@document.meta
+title: 127. Pre-rendering Pages and Endpoints
+description: 
+authors: mattc
+categories: [
+  Static HTML
+  Prerender
+]
+created: 2024-01-15T19:51:38+0800
+updated: 2024-01-15T20:10:59+0800
+version: 1.1.1
+@end
+
+* Prerender page
+
+  When a page has no dynamic (does not need to fetch any data, has no script logic, and looks the same to any user in any situation), it can be made into a static HTML and provided to the client.
+
+** remove all dynamic content of page
+   We delete all the dynamic content of +page.svelte and +layout.svelte that make up the home page to make it suitable for creating static HTML.
+
+   .image pic/127/1.png
+
+   *The button in the above image can actually work in Static HTML.*
+
+** build static HTML
+   .image pic/127/4.png
+
+   .image pic/127/2.png
+
+   .image pic/127/3.png
+
+
+** serve client with static HTML
+   .image pic/127/5.png
+
+
+* Prerender endpoint
+
+  除了 page 以外, endpoint 也可以設定 `prerender=true`
+
+** create a regualer endpoint
+   Let's first create a regular endpoint.
+   .image pic/127/6.png
+
+** set prerender and build
+   When an endpoint is set to `prerender=true`, it will automatically request it during the build process and store the result.
+
+   .image pic/127/7.png
+
+   .image pic/127/8.png
+
+** server client with preservered response
+   In the production mode, when the client requests this endpoint, the server will directly provide it with the response that was saved during the build process, without actually executing the request handler.
+
+   .image pic/127/9.png
+
+   .image pic/127/10.png
+
+

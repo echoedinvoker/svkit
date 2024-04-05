@@ -1,0 +1,38 @@
+@document.meta
+title: 160. Styling the Desktop Navigation Menu
+description: 
+authors: mattc
+categories: [
+  Styling
+  Navigation
+  Sticky
+  RWD
+]
+created: 2024-01-25T15:15:17+0800
+updated: 2024-01-25T15:15:53+0800
+version: 1.1.1
+@end
+
+* Styling side bar
+
+** basic styling and active
+   .image pic/160/1.png
+
+** hover & focus
+   .image pic/160/2.png
+
+
+* Only show side bar in desktop with >md screen size
+
+  .image pic/160/3.png
+
+
+* Let Side bar sticky to top
+
+** issue
+   When the content height in a page exceeds one screen, the following issues may arise.
+
+   .image pic/160/4.png
+
+** sticky to top
+   .image pic/160/5.png

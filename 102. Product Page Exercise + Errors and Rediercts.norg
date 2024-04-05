@@ -1,0 +1,51 @@
+@document.meta
+title: 102. Product Page Exercise + Errors and Rediercts
+description: 
+authors: mattc
+categories: [
+  Load Function
+  Route params
+  Error handling
+]
+created: 2024-01-08T16:22:55+0800
+updated: 2024-01-08T16:23:22+0800
+version: 1.1.1
+@end
+
+* Load function with route parems
+
+** plan
+   .image pic/102/1.png
+
+** query product by id in load function
+   We can directly obtain route params from the parameters of the load function and use it to query the product.
+
+   .image pic/102/2.png
+
+
+* +page.svelte --> PageData & Rendering
+
+  In theory, we use the type PageData to connect the data returned by the load function in +page.svelte. However, there are some type issues as follows.
+
+** type mismatch??
+   .image pic/102/3.png
+
+   .image pic/102/4.png
+
+** just write markup
+   Although there seems to be a problem with the type above, the data is indeed returned from the load function to +page.svelte. Therefore, we can directly write markup. Although there is no automatic type checking and auto complete due to the type issue, it can still function properly.
+
+   .image pic/102/5.png
+
+
+* Handling no product found
+
+  SvelteKit provides two functions to handle this situation.
+
+** error
+   .image pic/102/6.png
+
+** redirect
+   .image pic/102/7.png
+
+

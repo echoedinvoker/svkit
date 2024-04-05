@@ -1,0 +1,46 @@
+@document.meta
+title: 101. Layout Load Functions
+description: 
+authors: mattc
+categories: [
+  Layout
+  LayoutLoad
+  LayoutData
+]
+created: 2024-01-08T14:57:29+0800
+updated: 2024-01-08T14:57:53+0800
+version: 1.1.1
+@end
+
+* LayoutLoad
+
+** review PageLoad
+   .image pic/101/1.png
+
+** there is LayoutLoad, too!
+   .image pic/101/2.png
+
+
+* Using LayoutLoad data in the pages inside layout scope
+
+  There are some differences with PageLoad, not only Layout(Server)Load -> LayoutData relationship. Layout(Server)Load can also be sent to PageData.
+
+  .image pic/101/3.png
+
+  So all pages under this route can use the data from LayoutLoad.
+
+
+* Using LayoutLoad data in the other load function
+
+  We can obtain the data of LayoutLoad through the parameter of the callback function of load.
+
+  .image pic/101/4.png
+
+** blocking issue
+
+   What needs to be noted is that the parent is an async function. We obtain the LayoutLoad data of the parent by calling it, so we need to be careful about where we place it to avoid blocking the rendering of the original page.
+
+   .image pic/101/5.png
+
+   .image pic/101/6.png
+

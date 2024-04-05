@@ -1,0 +1,46 @@
+@document.meta
+title: 111. Re-running All Load Functions
+description: 
+authors: mattc
+categories: [
+  Load Function
+  Denpendency
+  invalidateAll
+]
+created: 2024-01-11T11:55:36+0800
+updated: 2024-01-11T11:55:59+0800
+version: 1.1.1
+@end
+
+* Load function will be re-executed when the dependency changes or not?
+
+** dependency is params, url or parent
+   .image pic/111/1.png
+
+** dependency is cookie
+   .image pic/111/2.png
+
+   .image pic/111/3.png
+
+   The conclusion is that the load function will be executed based on the type of dependency, and whether it will be changed accordingly.
+   But it is obvious that cookies do not trigger the load function to be re-executed, so we need to use other methods to trigger the load function to be re-executed.
+
+
+* invalidateAll()
+
+  This function will actively trigger all load functions to re-execute. Please note that it is used on the client side.
+
+** login
+   .image pic/111/4.png
+
+   .image pic/111/5.png
+
+** logout
+   .image pic/111/6.png
+
+** in fact, login don't need to use goto() when there is invalidateAll()
+   Because invalidateAll() triggers all load functions to run again, including the load function in the login route, which already determines whether to redirect based on the existence of the user. Therefore, we do not need to write goto() in the client.
+
+   .image pic/111/7.png
+
+

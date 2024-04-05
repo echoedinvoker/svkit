@@ -1,0 +1,69 @@
+@document.meta
+title: 168. Creating a Tippy Svelte Action For Out Profile Menu
+description: 
+authors: mattc
+categories: [
+  Tippy
+  Tooltip
+  Header
+  Action
+]
+created: 2024-02-02T17:09:32+0800
+updated: 2024-02-02T17:09:54+0800
+version: 1.1.1
+@end
+
+* Create action and use it in our Header's button
+
+** demand of this lecture
+   In this lecture, we are going to use Tippy to add a tooltip functionality to our icon button. Tippy is implemented through Svelte's action, so we will start by creating a basic action.
+
+   .image pic/168/1.png
+
+** create action file and folder for it
+   .image pic/168/2.png
+
+** use action in our button of Header
+   .image pic/168/3.png
+
+
+* Install/Use Tippy in our action
+
+** install tippy
+   .image pic/168/4.png
+
+** import tipppy
+   .image pic/168/5.png
+
+** basic tippy setting in action
+   .image pic/168/6.png
+
+
+* Type safe of Tippty props
+
+  Tippy's functionalities are all set based on the content of options, so we can use the type definitions provided by Tippy to have better prompts for our options and achieve a type-safe effect.
+
+** type options with Props
+   .image pic/168/7.png
+
+** Partial generic
+   .image pic/168/8.png
+
+   .image pic/168/9.png
+
+   As shown in the figure, although we do not necessarily have to pass in all properties to make Tippy work, there are many required properties in the type Props provided by Tippy. Therefore, we can use Partial to make all properties optional so that there will be no error prompts.
+
+   .image pic/168/10.png
+
+
+* Create contents of Tippy and bind it to the button
+
+  Above, we know that the value of "contents" in the options is the content of Tippy. However, what we want to display is a DOM element instead of a string. So, we directly write a div with a display of none in the Header and bind it to the contents of Tippy.
+
+  .image pic/168/11.png
+
+  .image pic/168/12.png
+
+  The Tippy made above will only be displayed when the cursor is on the button, but we hope to show/close Tippy by clicking the button. Tippy options provide other attributes for us to customize the behavior of Tippy.
+
+  .image pic/168/13.png

@@ -1,0 +1,48 @@
+@document.meta
+title: 175. Fetching the Home Page Data
+description: 
+authors: mattc
+categories: [
+  Playlist
+  Fetching
+  Type Safe
+  Spotify
+  Shuffle array
+]
+created: 2024-02-06T10:16:14+0800
+updated: 2024-02-06T10:16:49+0800
+version: 1.1.1
+@end
+
+* Return Playlists to page
+
+  In the previous lecture, we only simply requested the Spotify API to retrieve playlists. Here, we will further process them so that we can return playlist data to the page.
+
+  .image pic/175/1.png
+
+  The above codes differ from the course video in the final part. In the course video, promises are directly returned, but in the above codes, data is returned after waiting for the promises to be processed. This is because in actual testing, SvelteKit does not automatically wait for promises to be completed before returning data, as the lecturer mentioned. Perhaps this difference is caused by different versions.
+
+
+* User Playlists
+
+  .image pic/175/2.png
+
+
+* Type safe of Spotify playlists
+
+  Spotify provides types of playlists that allow us to safely use playlists on the page and have auto complete functionality.
+
+  .image pic/175/3.png
+
+
+* Random 3 categories playlists
+
+  Spotify has several dozen categories, and we hope to randomly select three of them and obtain their playlists.
+
+  .image pic/175/4.png
+
+  The `.sort(() => 0.5 - Math.random()).slice(0, 3)` is a method found by the lecturer on Stack Overflow. It is used to randomly sort an array and retrieve the first three elements.
+
+  .image pic/175/5.png
+
+  .image pic/175/6.png

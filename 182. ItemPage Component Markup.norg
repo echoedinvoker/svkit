@@ -1,0 +1,45 @@
+@document.meta
+title: 182. ItemPage Component Markup
+description: 
+authors: mattc
+categories: [
+  Slot
+  Banner
+  DOM element
+]
+created: 2024-02-21T18:47:15+0800
+updated: 2024-02-21T18:47:50+0800
+version: 1.1.1
+@end
+
+* Demand: album page item
+
+  In this lecture, we will turn the main part of the album page into a component and render the necessary elements with it.
+
+  .image pic/182/1.png
+
+
+* Create component for album page item and import
+
+  .image pic/182/2.png
+
+
+* Content
+
+  .image pic/182/3.png
+
+
+* Banner
+
+  .image pic/182/4.png
+
+
+* Render meta data by named slot
+
+  In the meta information section of the album, the lecturer chose to use the named slot method for rendering, so along with the two sections above, in this component, the lecturer demonstrated multiple rendering methods for teaching purposes.
+
+  .image pic/182/5.png
+
+  You can see that the slot attribute in Svelte does not need to be used in the <template> section.
+
+  We will complete styling in the next lecture.

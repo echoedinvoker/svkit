@@ -1,0 +1,64 @@
+@document.meta
+title: 156. Creating a Button Component
+description: 
+authors: mattc
+categories: [
+  Button
+  SCSS
+  Styling
+  RestProps
+  Ally
+]
+created: 2024-01-24T14:00:28+0800
+updated: 2024-01-24T14:01:05+0800
+version: 1.1.1
+@end
+
+* Create Button Component
+
+  .image pic/156/1.png
+
+
+* Forward event and Ally wawrning
+
+** forward click
+   Svelte does not automatically forward any events by default, so we have to forward them ourselves.
+
+   .image pic/156/2.png
+
+** remove warning text
+   .image pic/156/3.png
+
+
+* Button Styling andqw Variants
+
+  .image pic/156/4.png
+
+  Although the border of 'solid' may not be visible, it still needs to be added for consistency in height with other types.
+
+  .image pic/156/5.png
+
+
+* Styling of specific attr
+
+  If an attr value is boolean, such as disabled, in SCSS we can directly use :disabled to set its style when its value is true.
+
+  .image pic/156/6.png
+
+* \{...$$restProps}
+
+  Using `{...$$restProps}` automatically passes any props that are passed in from the outside but not defined internally to the HTML tag as its attributes to be utilized.
+
+  .image pic/156/7.png
+
+  .image pic/156/8.png
+
+
+* Styling of hover
+
+  .image pic/156/9.png
+
+
+* Styling of active
+
+  .image pic/156/10.png

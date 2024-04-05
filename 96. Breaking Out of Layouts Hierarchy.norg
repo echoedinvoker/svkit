@@ -1,0 +1,38 @@
+@document.meta
+title: 96. Breaking Out of Layouts Hierarchy
+description: 
+authors: mattc
+categories: [
+  Layouts
+  Break out
+]
+created: 2024-01-08T10:03:54+0800
+updated: 2024-01-08T10:04:07+0800
+version: 1.1.1
+@end
+
+* Prepare deep nested layouts
+
+  .image pic/96/1.png
+
+  When we have deep nested layouts like this, we may not need to display every layer of the layout.
+
+
+* Break out on the page
+
+  Originally, our route page was loaded layer by layer from the `<slot />` of each layout to obtain the inherited result. We can now use "@" to directly specify from which layout's `<slot />` a certain page should be loaded, so we don't have to inherit layer by layer anymore.
+
+** add @ to break out
+   .image pic/96/2.png
+
+** exact folder name followed by @
+   .image pic/96/3.png
+
+   .image pic/96/4.png
+
+
+* Break out on the layout
+
+  Above, if we use "@" on a page, it only affects that specific page. If we want to affect a certain route and all its sub-pages, we can use "@" on the layout.
+
+  .image pic/96/5.png

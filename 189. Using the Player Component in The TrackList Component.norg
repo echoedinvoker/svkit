@@ -1,0 +1,36 @@
+@document.meta
+title: 189. Using the Player Component in The TrackList Component
+description: 
+authors: mattc
+categories: [
+  Current Playing
+  Spotify
+  Pause
+  Gif
+]
+created: 2024-03-22T15:28:15+0800
+updated: 2024-03-22T15:28:55+0800
+version: 1.1.1
+@end
+
+* Track two states: current playing and pause status
+
+  .image pic/189/1.png
+
+
+* Playing gif
+
+  .image pic/189/2.png
+
+
+* Styling
+
+** gif size
+   .image pic/189/3.png
+
+** hidden playing/gif 
+   .image pic/189/4.png
+
+** different color text of current playing
+   .image pic/189/5.png
+

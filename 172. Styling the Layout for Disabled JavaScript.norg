@@ -1,0 +1,96 @@
+@document.meta
+title: 172. Styling the Layout for Disabled JavaScript
+description: 
+authors: mattc
+categories: [
+  no-js
+  Styling
+  Position
+  Sticky
+  Breakpoint
+  Sidebar
+]
+created: 2024-02-04T22:07:16+0800
+updated: 2024-02-04T22:07:54+0800
+version: 1.1.1
+@end
+
+** No-js mode
+
+.image pic/172/1.png
+
+In no-js mode, the HTML will have a 'no-js' class. We can use this class to make some style settings for the no-js mode.
+
+.image pic/172/2.png
+
+* Display sidebar(not menu) on small screen when no-js
+
+Because in the no-js mobile mode, we cannot use the menu button to open the menu, so we choose to use the desktop sidebar instead of the menu.
+
+.image pic/172/3.png
+
+.image pic/172/4.png
+
+.image pic/172/5.png
+
+
+* Topbar position
+
+** try to use relative position when no-js
+.image pic/172/6.png
+
+** on big screen, we still need fixed position
+.image pic/172/7.png
+
+.image pic/172/8.png
+
+
+** on small screen, sticky is better then relative
+.image pic/172/9.png
+
+.image pic/172/10.png
+
+.image pic/172/11.png
+
+.image pic/172/12.png
+
+
+* Remove padding top of page content for header
+
+.image pic/172/13.png
+
+.image pic/172/14.png
+
+
+* Remove icon button and directly show tippy contents
+
+.image pic/172/15.png
+
+.image pic/172/16.png
+
+.image pic/172/17.png
+
+
+* Styling tippy contents for no-js mode
+
+.image pic/172/18.png
+
+.image pic/172/19.png
+
+.image pic/172/20.png
+
+.image pic/172/21.png
+
+.image pic/172/22.png
+
+
+* Test whole app in no-js mode
+
+** topbar cut page content on big screen
+.image pic/172/23.png
+
+.image pic/172/24.png
+
+** login spotify cannot work on no-js mode
+.image pic/172/25.png
+

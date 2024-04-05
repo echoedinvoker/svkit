@@ -1,0 +1,27 @@
+@document.meta
+title: 94. Changing Layouts Conditionally
+description: 
+authors: mattc
+categories: [
+  Layouts
+  Conditional Layouts
+]
+created: 2024-01-08T08:38:59+0800
+updated: 2024-01-08T08:39:14+0800
+version: 1.1.1
+@end
+
+* Review nested layouts
+
+  .image pic/94/1.png
+
+  It was mentioned earlier that layout is inherited, but sometimes we want to avoid displaying the parent layout on certain pages, how to do it?
+
+
+* Conditionally layout
+
+  The simplest way is to use the {#if} condition.
+
+  .image pic/94/2.png
+
+  If there are more complex situations, we will introduce group layout in the next lecture.

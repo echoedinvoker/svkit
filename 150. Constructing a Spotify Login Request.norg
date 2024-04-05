@@ -1,0 +1,69 @@
+@document.meta
+title: 150. Constructing a Spotify Login Request
+description: 
+authors: mattc
+categories: [
+  Authentication
+  Spotify
+  Challenge
+  URI
+  Redirect
+]
+created: 2024-01-22T18:34:49+0800
+updated: 2024-01-22T18:35:24+0800
+version: 1.1.1
+@end
+
+* Plan
+
+  .image pic/150/1.png
+
+  .image pic/150/2.png
+
+
+* Build login page and endpoint to redirect to Spotify auth
+
+  .image pic/150/3.png
+
+
+* Redirect to Spotify auth and set params
+
+  .image pic/150/4.png
+
+
+* Params of security
+
+  The parameters 'state' and 'challenge' are parameters related to security.
+
+** state
+   The state params must be given a string of length 16. We copied a function from stackoverflow to generate a random string.
+
+   .image pic/150/5.png
+
+** challenge code
+   Here is not much explanation about PKCE, those who are interested can read its documentation themselves.
+
+   .image pic/150/6.png
+
+   .image pic/150/7.png
+
+
+* Test & URI issue
+
+** test
+   .image pic/150/8.png
+
+   .image pic/150/9.png
+
+   The above problem is due to the incorrect URI set on our Spotify website.
+
+** set URI on Spotify dev website
+   The URI set in the Spotify dev website must be exactly the same as the URL returned after Spotify authentication pass.
+
+   .image pic/150/10.png
+
+   .image pic/150/11.png
+
+   .image pic/150/12.png
+
+   As above, the ultimate goal here is to obtain code and state, which we will utilize in the subsequent lectures.

@@ -1,0 +1,38 @@
+@document.meta
+title: 97. Shared Load Function (Server and Client)
+description: 
+authors: mattc
+categories: [
+  Loading data
+  JSON
+]
+created: 2024-01-08T10:52:47+0800
+updated: 2024-01-08T10:53:33+0800
+version: 1.1.1
+@end
+
+* Prepare json file
+
+  For the upcoming course, we use the website DummyJSON to generate a fake products JSON file.
+
+  .image pic/97/1.png
+
+
+* +page.ts
+
+  Previously, we mentioned that the entry point for each route is +page.svelte (or +layout.svelte), which means that all other files except for it will be ignored. However, there is also +page.ts which will be executed when entering the route.
+
+  .image pic/97/2.png
+
+  In this file, we can import file data, fetch API data, or even directly fetch data from a database, or any TypeScript operations.
+
+  We can find that the terminal and browser console both print out our data, indicating that this script is executed on both the front-end and back-end.
+
+
+* auto-props to +page.svelte
+
+  The data obtained in +page.ts can be directly passed as props to +page.svelte using some techniques.
+
+  .image pic/97/3.png
+
+  Pay attention to the yellow highlighted part above. The names must comply with the specifications in the above image in order to have the automatic props data effect.

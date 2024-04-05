@@ -1,0 +1,37 @@
+@document.meta
+title: 123. Preloading Pages' Code
+description: 
+authors: mattc
+categories: [
+  Preloading
+  Preloading Code Only
+]
+created: 2024-01-15T10:41:58+0800
+updated: 2024-01-15T10:42:26+0800
+version: 1.1.1
+@end
+
+* Preloading only code
+
+  In some cases, we only want to preload code without needing to preload data, for example when the data is updated frequently and we need to ensure that the page presented to the user is displaying the latest information.
+
+  .image pic/123/1.png
+
+  You can see that `data-svelte-preload` is actually a combination of `data-svelte-preload-data` and `data-svelte-preload-code`.
+
+  .image pic/123/2.png
+
+  The effect is the same but HTML is simpler.
+
+
+* Two more options for preloading code
+
+  Compared to `data-svelte-preload`, `data-svelte-preload-code` has two more options.
+
+  .image pic/123/3.png
+
+** eager
+   Will preload directly when the page containing the link is loading.
+
+** viewport
+   As the name suggests, preload when the link is within the viewport.

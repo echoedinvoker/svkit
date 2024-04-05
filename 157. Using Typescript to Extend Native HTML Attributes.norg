@@ -1,0 +1,44 @@
+@document.meta
+title: 157. Using Typescript to Extend Native HTML Attributes
+description: 
+authors: mattc
+categories: [
+  $$Props
+  $$Generic
+  Generic
+  Typescript
+  HTMLAttributes
+]
+created: 2024-01-24T14:51:28+0800
+updated: 2024-01-24T14:52:24+0800
+version: 1.1.1
+@end
+
+* Type issue
+
+  .image pic/157/1.png
+
+
+* $$Props to define props type
+
+  We can use $$Props to define all the props types in a component. Usually, we don't need to define it separately.
+
+  .image pic/157/2.png
+
+
+* Let $$Props inherit 
+
+  The purpose of writing $$Props is mainly to allow components to inherit some types.
+
+  .image pic/157/3.png
+
+
+* $$Generic to dynamic determine which type should be used
+
+  In order to dynamically determine which type to inherit based on the value of the element, we must set the critical element's type as $$Generic.
+
+  .image pic/157/4.png
+
+  Then, from this $$Generic component, dynamically select the $$Props through the interface created map to choose the required inherited type.
+
+  .image pic/157/5.png

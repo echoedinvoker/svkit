@@ -1,0 +1,60 @@
+@document.meta
+title: 187. The TrackList Component Styling
+description: 
+authors: mattc
+categories: [
+  Styling
+  Tracks
+  Column
+  Table
+]
+created: 2024-02-29T21:24:26+0800
+updated: 2024-02-29T21:27:13+0800
+version: 1.1.1
+@end
+
+* Demand: styling tracks table
+
+  .image pic/187/1.png
+
+
+* row styling
+
+  .image pic/187/2.png
+
+** header row
+*** bottom line
+    .image pic/187/3.png
+*** title & clock
+    .image pic/187/4.png
+
+** not header row - hovering color
+   .image pic/187/5.png
+
+   border-radius will give the bottom line of the header a rounded corner, so the header part uses `border-radius: 0;` to override it.
+
+
+* number-column
+
+  We want to align the number to the right, so we use flex-end.
+
+  .image pic/187/6.png
+
+
+* info-column
+
+** title & explicit
+   .image pic/187/7.png
+
+** artists
+   .image pic/187/8.png
+
+
+* duration-column
+
+  .image pic/187/9.png
+
+
+* actions-column
+
+  .image pic/187/10.png

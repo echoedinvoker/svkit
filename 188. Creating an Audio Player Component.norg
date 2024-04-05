@@ -1,0 +1,73 @@
+@document.meta
+title: 188. Creating an Audio Player Component
+description: 
+authors: mattc
+categories: [
+  Player
+  Audio
+  Dispatch
+]
+created: 2024-03-07T20:42:05+0800
+updated: 2024-03-07T20:42:30+0800
+version: 1.1.1
+@end
+
+* Create custom component for the music player
+
+** demand
+   .image pic/188/1.png
+
+** create component file and import it to the right place
+   .image pic/188/2.png
+
+
+* Create audio element to play the music of the track
+
+  .image pic/188/3.png
+
+
+* Hidden audio element and using a button to control it
+
+  .image pic/188/4.png
+
+
+* UI of the player button
+
+  .image pic/188/5.png
+
+
+* arial and focused attributes
+
+  The button should have aria-label and focused attributes, but the icons inside do not need these features.
+
+  .image pic/188/6.png
+
+
+* Demand: When one track is played, the other tracks should be paused.
+
+** demand
+   .image pic/188/7.png
+
+** codes
+   We use context script to complete this requirement.
+
+   .image pic/188/8.png
+
+
+* Dispatch custom events to TrackList
+
+** demand
+   .image pic/188/9.png
+
+** createEventDispatcher
+   .image pic/188/10.png
+
+** test
+   .image pic/188/11.png
+
+   (need to re-launch the server...)
+
+
+* Remove duplicated codes
+
+  .image pic/188/12.png

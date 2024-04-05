@@ -1,0 +1,42 @@
+@document.meta
+title: 107. Using Fetch in SvelteKit
+description: 
+authors: mattc
+categories: [
+  Fetch
+  Endpoint
+  Await
+]
+created: 2024-01-10T16:17:30+0800
+updated: 2024-01-10T16:18:05+0800
+version: 1.1.1
+@end
+
+* Actually fetching API to get data in the endpoint (+server.ts)
+
+  .image pic/107/1.png
+
+  .image pic/107/2.png
+
+  The fetch function we bring out from the parameters is almost the same as the original fetch in JavaScript, but it has more features that will be seen later.
+
+
+* Call ourself endpoint to get data at +page.server.ts
+
+  We can send a request from the page to our own endpoint. Sometimes, it is necessary to bring cookies or some authentication information from the client side.
+
+  .image pic/107/3.png
+
+  When we call an endpoint in the page section, the fetch inside uses a relative path instead of a complete URL. This way, SvelteKit does not actually send an HTTP request but directly calls the function in +server.ts. This avoids CORS issues and improves app performance.
+
+  .image pic/107/4.png
+
+
+* Directly return promise
+
+  Sometimes we choose to directly return a promise to +page. In this way, when there are multiple async calls, they will be sent out simultaneously, which can speed up the process.
+
+  .image pic/107/5.png
+
+  .image pic/107/6.png
+

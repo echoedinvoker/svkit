@@ -1,0 +1,44 @@
+@document.meta
+title: 129. Pre-rendering Pages with Dynamic Parameters
+description: 
+authors: mattc
+categories: [
+  Crawler
+  Pre-rendering
+  Dynamic Parameters
+  Fall back to SSR
+]
+created: 2024-01-15T23:02:23+0800
+updated: 2024-01-15T23:03:03+0800
+version: 1.1.1
+@end
+
+* Prerender page with parameter
+
+** set renderer = true
+   .image pic/128/9.png
+
+** set crawler entries in svelte.config.js
+   The meaning of 'crawler' is that it will crawl which routes during the build process and generate static pages.
+
+   .image pic/128/10.png
+
+
+* Build static HTML & data
+
+  During the build process, pages with parameters will generate pages based on the settings in `svelte.config.ts` by passing values in the parameters.
+
+  .image pic/128/11.png
+
+  .image pic/128/12.png
+
+
+* Fallback to SSR
+
+  When the parameter used exceeds the scope of static HTML, using `const prerender = true` will result in a 404 page. We can instead use `const prerender = 'auto'` to fallback to SSR.
+
+  .image pic/128/13.png
+
+  .image pic/128/14.png
+
+

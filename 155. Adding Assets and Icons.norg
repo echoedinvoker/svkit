@@ -1,0 +1,44 @@
+@document.meta
+title: 155. Adding Assets and Icons
+description: 
+authors: mattc
+categories: [
+  Assets
+  Icon
+  CSS
+]
+created: 2024-01-24T11:16:37+0800
+updated: 2024-01-24T11:17:08+0800
+version: 1.1.1
+@end
+
+* Download assets
+
+  .image pic/155/1.png
+
+
+* Icon
+
+  The lecturer feels that the icon can be implemented using the Lucide package, which can be used in most frameworks.
+
+  .image pic/155/2.png
+
+  .image pic/155/3.png
+
+  .image pic/155/4.png
+
+
+* How to let CSS know current mode (Javascript/non-Javascript)?
+
+  .image pic/155/5.png
+
+  [link]{https://www.paulirish.com/2009/avoiding-the-fouc-v3/}
+
+  This link provides an explanation and instructions on how to automatically change the script of an HTML class.
+
+  .image pic/155/6.png
+
+  .image pic/155/7.png
+
+  So other CSS can determine the current environment by checking for the presence of the class "js" or "no-js" on the HTML.
+

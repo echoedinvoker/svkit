@@ -1,0 +1,54 @@
+@document.meta
+title: 151. Creating the Spotify Redirect Callback Endpoint
+description: 
+authors: mattc
+categories: [
+  Cookies
+  State matching
+  Token
+  Redirect
+]
+created: 2024-01-22T19:42:06+0800
+updated: 2024-01-22T19:42:54+0800
+version: 1.1.1
+@end
+
+* Get code and state by url.searchParams
+
+  Observing the results of the previous lecture, we can find that the code and state are in the searchParams of the URL. Therefore, we can use the searchParams of the URL to obtain their values.
+
+  .image pic/151/1.png
+
+  .image pic/151/2.png
+
+
+* State matching
+
+  We need to compare the state of the response with the state we used in our request to prevent CSRF attacks.
+
+  We use Cookies to save the state used in the request, so that we can compare the state during the callback to see if they match.
+
+  .image pic/151/3.png
+
+  .image pic/151/4.png
+
+
+* Request to get tokens
+
+  .image pic/151/5.png
+
+  Be sure to give a default value when retrieving a value from cookies, usually null, and if it is in the params, give "".
+
+
+* Error handling, Store tokens to cookies and redirect
+
+  .image pic/151/6.png
+
+
+* Final Test
+
+  .image pic/151/7.png
+
+  .image pic/151/8.png
+
+  .image pic/151/9.png

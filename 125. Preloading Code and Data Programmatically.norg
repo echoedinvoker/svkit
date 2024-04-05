@@ -1,0 +1,39 @@
+@document.meta
+title: 125. Preloading Code and Data Programmatically
+description: 
+authors: mattc
+categories: [
+  Preloading
+  Programatically Navigation
+  Goto
+  No Scroll
+]
+created: 2024-01-15T11:29:38+0800
+updated: 2024-01-15T11:30:21+0800
+version: 1.1.1
+@end
+
+* Programatically navigation, how to preload?
+
+  The various trigger preload attributes mentioned in the previous lectures only work for links (anchors). How can we do it for programmatic navigation?
+
+** no preload
+   .image pic/125/1.png
+
+** add preload data & code
+   .image pic/125/2.png
+
+** remove IDE warning
+   .image pic/125/3.png
+
+** test
+   .image pic/125/4.png
+
+
+* How to do data-sveltekit-noscroll programatically?
+
+  The second parameter of goto() is an option object. We can use its property 'noScroll' to achieve that.
+
+  .image pic/125/5.png
+
+

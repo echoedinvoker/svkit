@@ -1,0 +1,46 @@
+@document.meta
+title: 136. Named Form Actions
+description: 
+authors: mattc
+categories: [
+  Logout
+  Form Actions
+  Named Actions
+]
+created: 2024-01-17T15:39:15+0800
+updated: 2024-01-17T15:39:43+0800
+version: 1.1.1
+@end
+
+* What we wanna do this lecture?
+
+  .image pic/134/1.png
+
+  In the previous lecture, we mentioned the issue of logout not functioning in non-Javascript mode. We will solve this problem in this lecture.
+
+
+* Using named actions & Fix login form
+
+  In an actions object, there can be multiple methods responsible for different functionalities. We refer to them as named actions. We add the 'logout' method to the same actions object as the login.
+
+  .image pic/134/2.png
+
+  Because there is no 'default' method now, of course, any codes for pages that use the login form need to be modified to let the form know which method to point to.
+
+  .image pic/134/3.png
+
+  We use a query string-like string in the attr 'action' of the form tag to indicate which method in the actions object the form should use.
+
+
+* Complete logout actions & Replace logout button with form
+
+  .image pic/134/4.png
+
+  The mechanism of form actions is implemented through HTML native form, so even if only one button is needed for logging out, the form tag must be used to complete this mechanism. This is a non-intuitive aspect, but it can work in a non-Javascript environment.
+
+
+* Test logout in non-Javascript environment
+
+  .image pic/134/5.png
+
+  .image pic/134/6.png

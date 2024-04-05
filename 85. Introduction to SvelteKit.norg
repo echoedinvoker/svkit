@@ -1,0 +1,36 @@
+@document.meta
+title: 85. Introduction to SvelteKit
+description: 
+authors: mattc
+categories: [
+  SvelteKit
+  Features
+]
+created: 2024-01-06T01:26:44+0800
+updated: 2024-01-06T01:27:07+0800
+version: 1.1.1
+@end
+
+* Svelte & SvelteKit
+
+  Svelte is a compiler and framework for building web applications. But it is still hard to use it to build a full-stack application. SvelteKit is a framework that aims to solve this problem. 
+
+
+* Main features of app build by SvelteKit
+
+  The app built with SvelteKit has the following features:
+
+** SSR
+   So there won't be any SEO issues.
+
+** Progressive Web App
+   So it can be used anywhere, even without a JavaScript environment.
+
+
+* Other features
+
+** Routing
+
+** Code Splitting
+
+** Offline Support

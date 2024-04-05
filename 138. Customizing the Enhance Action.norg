@@ -1,0 +1,60 @@
+@document.meta
+title: 138. Customizing the Enhance Action
+description: 
+authors: mattc
+categories: [
+  Enhance Action
+  Custom Enhance Action
+]
+created: 2024-01-18T19:58:56+0800
+updated: 2024-01-18T19:59:27+0800
+version: 1.1.1
+@end
+
+* enhance function
+
+** review
+.image pic/136/1.png
+
+** post function to use:enhance
+.image pic/136/2.png
+
+** test
+.image pic/136/3.png
+
+
+* props of enhance function
+
+.image pic/136/4.png
+
+When we post a function to use:enhance, the original behavior of use:enhance will be overridden, and we must redefine the behavior of use:enhance ourselves.
+
+.image pic/136/5.png
+
+
+* update
+The update() function is equivalent to the default behavior of use:enhance. We can simply execute it to obtain the original behavior of use:enhance.
+
+.image pic/136/6.png
+
+
+* applyAction
+
+But sometimes we do not want to execute the default behavior in certain response situations. We can use applyAction to conditionally execute the default behavior.
+
+.image pic/136/7.png
+
+** exercise: custom behavior for error case
+Assuming we want to have custom behavior when an error occurs.
+
+.image pic/136/8.png
+
+.image pic/136/9.png
+
+** test other cases
+Test other response types (validate fail, redirect) to see if the default behavior can be executed.
+
+.image pic/136/10.png
+
+.image pic/136/11.png
+

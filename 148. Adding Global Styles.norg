@@ -1,0 +1,63 @@
+@document.meta
+title: 148. Adding Global Styles
+description: 
+authors: mattc
+categories: [
+  SCSS
+  Global Styles
+  Color variables
+  Font-family
+  Focus
+  Selection
+]
+created: 2024-01-22T15:36:55+0800
+updated: 2024-01-22T15:37:31+0800
+version: 1.1.1
+@end
+
+* Set global scss file
+
+** prepare some basic tags for test
+   .image pic/148/1.png
+
+** create and import global scss file to all page
+   .image pic/148/2.png
+
+
+* Font-family
+
+  .image pic/148/3.png
+
+  .image pic/148/4.png
+
+
+* Color variables
+
+  .image pic/148/5.png
+
+
+* Selection
+
+  .image pic/148/6.png
+
+  .image pic/148/7.png
+
+
+* Head and paragraph
+
+  .image pic/148/8.png
+
+
+* Anchor
+
+  .image pic/148/9.png
+
+
+* Focus
+
+  .image pic/148/10.png
+
+  .image pic/148/11.png
+
+
+  The above is just the basic global SCSS settings, and in the future, there should be additions according to the needs.

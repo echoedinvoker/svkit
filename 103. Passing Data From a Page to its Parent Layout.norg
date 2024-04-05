@@ -1,0 +1,39 @@
+@document.meta
+title: 103. Passing Data From a Page to its Parent Layout
+description: 
+authors: mattc
+categories: [
+  Head
+  SEO
+  Title
+]
+created: 2024-01-09T08:50:21+0800
+updated: 2024-01-09T08:53:31+0800
+version: 1.1.1
+@end
+
+* Using `<svelte:head>` inside page
+
+** issue
+   We do not yet have a suitable page title, which not only leads to a poor user experience but also affects SEO.
+
+   .image pic/103/1.png
+
+** `<svelte:head>` in +page.svelte
+   We can simply use `<svelte:head>` to set the content of the `<head>` of the page.
+
+   .image pic/103/2.png
+
+
+* Using `<svelte:head>` inside +layout.svelte
+
+  > Although writing svelte head on each page is a feasible method, it can easily lead to duplicated code. We can consider using `<svelte:head>` in +layout.svelte to set the content of the `<head>` tag.
+
+** migrate `<svlte:head>` to +layout.svelte
+   .image pic/103/3.png
+
+** get info from page
+   We need to obtain information from the page to adjust the content in the head. We can achieve this by using the page store.
+
+   .image pic/103/4.png
+

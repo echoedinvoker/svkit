@@ -1,0 +1,42 @@
+@document.meta
+title: 92. Parameter Matchers
+description: 
+authors: mattc
+categories: [
+  Parameter Matchers
+]
+created: 2024-01-06T17:24:30+0800
+updated: 2024-01-06T17:24:56+0800
+version: 1.1.1
+@end
+
+* Params matcher
+
+** requirment of params matcher
+   Sometimes we need to impose some restrictions on params. When the value of params does not meet the specifications, we must return a 404 page.
+
+   .image pic/92/1.png
+
+   Above is an case, SvelteKit provides a simple way for us to add restrictions to params.
+
+** create params matcher
+   .image pic/92/2.png
+
+   As mentioned above, after creating a params matcher in the 'params' folder, we can directly apply restrictions to this param by adding `={param matcher name}` to the params folder name.
+
+** test
+   .image pic/92/3.png
+
+   .image pic/92/4.png
+
+
+* Another case of params matcher
+
+  .image pic/92/5.png
+
+  .image pic/92/6.png
+
+  .image pic/92/7.png
+
+  As mentioned above, we have found that there are some issues with the param matcher when it is used on rest params. This may generate bugs, so extra caution is necessary.
+

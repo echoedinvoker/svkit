@@ -1,0 +1,25 @@
+@document.meta
+title: 141. Adapters Overview
+description: 
+authors: mattc
+categories: [
+  Adapter
+  Environment Variables
+]
+created: 2024-01-19T13:58:46+0800
+updated: 2024-01-19T13:59:18+0800
+version: 1.1.1
+@end
+
+* Adapter
+
+  The SvelteKit adapter is a plugin for SvelteKit applications that allows them to be deployed to different environments and platforms. These adapters transform SvelteKit applications to make them suitable for specific server or static site hosting services.
+
+  .image pic/139/1.png
+
+
+* Move sensitive data to environment variables
+
+  Before deploying, make sure to transfer sensitive data to environment variables, such as API keys, database passwords, and other secrets, instead of directly writing them in the code.
+
+  .image pic/139/3.png

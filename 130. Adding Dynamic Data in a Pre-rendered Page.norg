@@ -1,0 +1,37 @@
+@document.meta
+title: 130. Adding Dynamic Data in a Pre-rendered Page
+description: 
+authors: mattc
+categories: [
+  Dynamic Rendering
+  Dynamic Data
+  Prerendering
+  onMount
+]
+created: 2024-01-16T11:53:14+0800
+updated: 2024-01-16T11:53:56+0800
+version: 1.1.1
+@end
+
+* Prerendered page still can use dynamic data
+
+  Even if the page directly provides static HTML, we can still dynamically render data on the *client side*.
+
+  .image pic/129/1.png
+
+  Although we cannot do fetching on the server side, we can still do fetching on the client side and render data on the client side.
+
+  .image pic/129/2.png
+
+
+* Downside of client-side dynamic rendering
+
+  However, because it is client-side dynamic rendering, there are some drawbacks that need to be addressed.
+
+  1. Fetching data in the frontend will affect the user experience, so a spinner should be added during the fetching process.
+
+  2. The part of front-end dynamic rendering will be completely ineffective in an environment without JavaScript.
+
+  3. Bad for SEO.
+
+  So try to use prerendering only when it is confirmed that the page does not require dynamic data, and prioritize SSR as much as possible.

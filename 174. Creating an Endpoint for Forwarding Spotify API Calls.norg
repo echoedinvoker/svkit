@@ -1,0 +1,43 @@
+@document.meta
+title: 174. Creating an Endpoint for Forwarding Spotify API Calls
+description: 
+authors: mattc
+categories: [
+  Endpoint
+  Fetching
+  PageLoad
+  SearchParameter
+]
+created: 2024-02-05T15:58:30+0800
+updated: 2024-02-05T15:59:05+0800
+version: 1.1.1
+@end
+
+* Migrate fetching from PageServerLoad to Endpoint
+
+** fetching
+   .image pic/174/1.png
+
+   Please note that we change our URL to a dynamic way by passing it from the path. This allows us to reuse our endpoint without having to modify the code again.
+
+** handling error
+   .image pic/174/2.png
+
+** return data
+   .image pic/174/3.png
+
+
+* PageLoad to call endpoint
+
+  Because the URL in our endpoint is dynamic, we can directly pass the desired path to our endpoint. Therefore, a single endpoint can handle multiple different API requests.
+
+  .image pic/174/4.png
+
+
+* Override default search parameters
+
+  .image pic/174/5.png
+
+  Assuming we only need to display six albums on the homepage, we can override the 'limit' of the search parameter.
+
+  .image pic/174/6.png

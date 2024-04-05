@@ -1,0 +1,69 @@
+@document.meta
+title: 159. Creating the Desktop Navigation Menu
+description: 
+authors: mattc
+categories: [
+  Lucide
+  ComponentType
+  Icon
+  SideBar
+]
+created: 2024-01-25T00:30:00+0800
+updated: 2024-01-25T00:30:34+0800
+version: 1.1.1
+@end
+
+* Our final expected result
+
+  This lecture will start by creating a side bar, and it should have different effects on desktop and mobile.
+
+** desktop
+   .image pic/159/1.png
+
+** mobile
+   .image pic/159/2.png
+
+   .image pic/159/3.png
+
+
+* Layout sidebar
+
+  .image pic/159/4.png
+
+
+* Create component Navigation
+
+  .image pic/159/5.png
+
+
+* Props and data -- Generic ComponentType and Icon
+
+** Props and data
+   .image pic/159/6.png
+
+** restrict generic by Icon
+   ComponentType is a generic, representing any Svelte component. However, here we can only place lucide Icon components. If we want to further restrict it, we must use lucide's provided type Icon to limit the generic ComponentType.
+
+   .image pic/159/7.png
+
+   .image pic/159/8.png
+
+
+* Complete template and simple styling
+
+  .image pic/159/9.png
+
+  The attribute starting with 'aria' is specifically for screen readers. If it has 'aria-hidden="true"', the screen reader will ignore it, indicating that it is purely decorative and does not provide any information.
+
+  The classes 'desktop' and 'mobile' are important. They will allow the side bar to display different effects in the desktop and mobile environments. We will explain this in the upcoming lecture.
+
+  The styling for this part is temporarily written by myself to allow the browser to display a rough effect. Styling has not yet been started in the course videos.
+
+
+
+* Lucide Icon styling attributes
+
+  Usually, the UI components of a package will provide attributes for styling, and Lucide is no exception.
+
+  .image pic/159/10.png
+

@@ -1,0 +1,104 @@
+@document.meta
+title: 163. Improving Menu's Accessibility
+description: 
+authors: mattc
+categories: [
+  tick
+  focus
+  Menu
+  visibility
+  animation
+]
+created: 2024-01-29T22:53:31+0800
+updated: 2024-03-20T22:50:52+0800
+version: 1.1.1
+@end
+
+* Issue: hidden focus
+
+** issue explanation
+   .image pic/163/1.png
+
+   .image pic/163/2.png
+
+   As shown above, when tabbing for the second time, the focus disappears because it goes to the button on the hidden menu. We hope to avoid this situation.
+
+** sovle issue by setting visibility:hidden
+   .image pic/163/3.png
+
+
+* Test and 2nd Issue: broken animation
+
+** issue explanation
+   When the menu is open, clicking the close button will immediately trigger visibility:hidden, so the animation cannot be seen.
+
+   .image pic/163/4.png
+
+   .image pic/163/5.png
+
+** solve by delay visibility:hidden with transition
+   .image pic/163/6.png
+
+
+
+* Auto-focus buttons when clicking buttons by keyboard
+
+** demand: auto-focus buttons
+   We hope that when using the keyboard to click the open/close buttons to switch the menu status, the focus can automatically jump to the corresponding buttons.
+
+   .image pic/163/7.png
+
+   .image pic/163/8.png
+
+   .image pic/163/9.png
+
+** bind:this and .focus()
+   .image pic/163/10.png
+
+   .image pic/163/11.png
+
+   .image pic/163/12.png
+
+   .image pic/163/13.png
+
+   .image pic/163/14.png
+
+   .image pic/163/15.png
+
+   The above is implemented using the most intuitive method, but testing found that the process from open to close does not automatically focus on the close button.
+
+** exclude factors of visibility:hidden.
+   The reason above is that in the menu close state, the visibility is set to hidden, so naturally the close button on the menu will be ineffective. The solution is to ensure that visibility: visible does not have any delay.
+
+   .image pic/163/16.png
+
+   .image pic/163/17.png
+
+   .image pic/163/18.png
+
+** add tick() delay
+   Although we have removed the delay for visibility:visible, we still cannot guarantee that the execution order of visibility:visible will always be before .focus(). Therefore, we add tick() to ensure the execution order.
+
+   .image pic/163/19.png
+
+   .image pic/163/20.png
+
+   .image pic/163/21.png
+
+
+
+* aria-expanded
+
+  .image pic/163/22.png
+
+
+
+* Auto-close menu when navigating to a new page
+
+  .image pic/163/23.png
+
+  .image pic/163/24.png
+
+  .image pic/163/25.png
+
+  .image pic/163/26.png

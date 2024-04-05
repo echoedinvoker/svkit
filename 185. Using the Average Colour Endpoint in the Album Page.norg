@@ -1,0 +1,43 @@
+@document.meta
+title: 185. Using the Average Colour Endpoint in the Album Page
+description: 
+authors: mattc
+categories: [
+  Background Color
+  Linear Gradient
+  Top bar
+]
+created: 2024-02-27T20:27:16+0800
+updated: 2024-02-27T20:27:47+0800
+version: 1.1.1
+@end
+
+* set background color of album page
+
+  We use the endpoint created in the previous lecture to obtain the average color of the album image and set it as the background color of the page.
+
+  .image pic/185/1.png
+
+  .image pic/185/2.png
+
+
+* Top bar background color should match average color of album cover, too
+
+  .image pic/185/3.png
+
+  The top bar is written in the layout, and the layout cannot directly pass props pageData, but can obtain pageData from the store 'page'.
+
+  .image pic/185/4.png
+
+  .image pic/185/5.png
+
+
+* Make background color of top bar darker
+
+  We found that the top bar becomes too bright after changing the color.
+
+  .image pic/185/6.png
+
+  A simple technique using linear gradient to overlay a layer of transparent black to make the color tone darker.
+
+  .image pic/185/7.png

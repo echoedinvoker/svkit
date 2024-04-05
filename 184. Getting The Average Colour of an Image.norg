@@ -1,0 +1,42 @@
+@document.meta
+title: 184. Getting The Average Colour of an Image
+description: 
+authors: mattc
+categories: [
+  Color
+  ArrayBuffer
+  Sharp
+]
+created: 2024-02-27T19:08:11+0800
+updated: 2024-02-27T19:08:47+0800
+version: 1.1.1
+@end
+
+* Plan 
+
+  In the previous lecture, we prepared the background and were able to give it a color. In this lecture, we want the average color of the album image to determine the background color.
+
+  .image pic/184/1.png
+
+
+* Install Sharp package
+
+  This package is used to handle images, and of course, it can also obtain information about the images. We will use this information to calculate the average color of the image.
+
+  .image pic/184/2.png
+
+
+* Get stats of picture by Sharp package
+
+  Sharp needs the image itself, not the URL, so we need to first fetch the image and then use Sharp to process the image.
+
+  We usually use arrayBuffer to convert binary data from File or Blob into an ArrayBuffer, and then use this ArrayBuffer to process the data. However, Sharp does not support ArrayBuffer, so we need to convert the ArrayBuffer into a Buffer.
+
+  .image pic/184/3.png
+
+
+* Group color rgba value from stats data
+
+  .image pic/184/4.png
+
+  .image pic/184/5.png

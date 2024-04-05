@@ -1,0 +1,19 @@
+@document.meta
+title: 66. Introduction to the Context API
+description: 
+authors: mattc
+categories: [
+  Context
+]
+created: 2024-01-06T01:14:43+0800
+updated: 2024-01-06T01:15:08+0800
+version: 1.1.1
+@end
+
+* Difference between Context and Store
+
+  Context and Store are both used to solve props drill, but the data in Store can be accessed by all components, while Context is set within a component and can only be accessed by that component and its child components.
+
+  .image pic/66/1.png
+
+  In the above image, there are two contexts established in two parent components. These two contexts exist independently and can only be accessed by their child components.

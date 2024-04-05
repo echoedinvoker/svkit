@@ -1,0 +1,45 @@
+@document.meta
+title: 105. Handling Pages and Endpoints in the Same Route and Creating POST Endpoints
+description: 
+authors: mattc
+categories: [
+  Endpoint
+  POST
+  Validation
+]
+created: 2024-01-09T19:48:58+0800
+updated: 2024-01-09T20:30:25+0800
+version: 1.1.1
+@end
+
+* Can we put endpoint (+server.ts) and page (+page.ts) in the same folder?
+
+** plan & try
+   .image pic/105/1.png
+
+   .image pic/105/2.png
+
+
+** results depends
+   It will be determined by what tool we use to request whether it is handled by +server.ts or +page.ts.
+
+   .image pic/105/3.png
+
+   .image pic/105/4.png
+
+
+* POST RequestHandler
+
+  If the RequestHandler named is `POST`, we can get the request object from the params key `request` and use .json() to get the request body.
+
+  .image pic/105/5.png
+
+In SvelteKit, we have a better method - Form action can replace POST RequestHandler.
+
+
+* Validation
+
+  Of course, we can add some validation to ensure the correctness of the request body. We will use a very simple example below.
+
+  .image pic/105/6.png
+

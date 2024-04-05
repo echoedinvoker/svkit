@@ -1,0 +1,70 @@
+@document.meta
+title: 89. Navigation Functions- goto beforeNavigate and afterNavigate
+description: 
+authors: mattc
+categories: [
+  Navigation
+  Programmatic navigation
+]
+created: 2024-01-06T11:21:53+0800
+updated: 2024-01-06T11:22:13+0800
+version: 1.1.1
+@end
+
+* Programmatic navigation
+
+  We have previously learned to use anchor tags for page navigation, but sometimes we need to navigate within the code. In such cases, we need to use the goto function provided by SvelteKit.
+
+** Anchor navigation
+   .image pic/89/1.png
+
+** Programmatic navigation
+   .image pic/89/2.png
+
+
+* Lifecycle functions of navigation
+
+  Before and after navigation, SvelteKit provides lifecycle functions that allow us to execute some codes at these two time points.
+
+  .image pic/89/3.png
+
+  .image pic/89/4.png
+
+  .image pic/89/5.png
+
+** cancel the navigation
+   The "params" of beforeNavigate() has a method called cancel(), which can cancel the navigation.
+
+   .image pic/89/6.png
+
+   Usually, it is used in conjunction with conditions to better meet practical needs.
+
+   .image pic/89/7.png
+
+   .image pic/89/8.png
+
+   It is reasonable for the params of afterNavigate() to not have cancel(). We cannot cancel something that has already happened.
+
+** type of navigation
+   The type information provided in the navigation params is very useful, as it allows us to know what type of navigation it is and therefore make different handling.
+
+   .image pic/89/9.png
+
+   .image pic/89/10.png
+
+   .image pic/89/11.png
+
+   .image pic/89/12.png
+
+   .image pic/89/13.png
+
+   .image pic/89/14.png
+
+
+* Store of navigation
+
+  Like page store, Svelte also provides a navigating store to store navigation information, making it easier to directly render its content onto the page compared to lifecycle functions.
+
+  .image pic/89/15.png
+
+  Although written similarly to the course video, the result is different, and the reason is not very clear.

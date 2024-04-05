@@ -1,0 +1,60 @@
+@document.meta
+title: 138. \[Exercise Solution\] Showing Validation Error Using the Enhance Action
+description: 
+authors: mattc
+categories: [
+  ActionData
+  Form Validation
+  Form Enhance
+]
+created: 2024-01-19T11:48:20+0800
+updated: 2024-01-19T11:49:03+0800
+version: 1.1.1
+@end
+
+* Plan
+
+  In the previous lecture, we discussed how to customize the behavior of use:enhance. However, this lecture will focus on the situation where the form and Actions function are not in the same route. Additionally, we will address the issue of use:enhance not being able to update the form and $page.form when using different routes.
+
+  .image pic/137/1.png
+
+
+* Write enhance function in script
+
+  Because the enhance function involves using "as" for type casting, it must be written inside the script because type casting operations cannot be done in markup.
+
+  .image pic/137/2.png
+
+  However, when writing the enhance function in script, it is necessary to define its type as SubmitFunction.
+
+
+* Disabled submit button
+
+  .image pic/137/3.png
+
+
+* CASE: Success - redirect (Default)
+
+  Use applyAction() in the same way to execute the default behavior based on conditions.
+
+  .image pic/137/4.png
+
+
+* CASE: Error (Custom)
+
+  .image pic/137/5.png
+
+  .image pic/137/6.png
+
+
+* CASE: Validation fail (Custom)
+
+  This part actually does two things: 1. Display the validation fail message, 2. Keep the value in the input field.
+
+  .image pic/137/7.png
+
+  The default behavior of "use:enhance" in the same route is to write the value of the Actions function response into ActionData. Therefore, we also follow the default behavior to write it. However, it is important to note that the path referencing ActionData must be in the route where the Actions function is located.
+
+  .image pic/137/8.png
+
+  .image pic/137/9.png

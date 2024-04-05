@@ -1,0 +1,53 @@
+@document.meta
+title: 165. Creating An Icon Button Component
+description: 
+authors: mattc
+categories: [
+  Label
+  Icon
+  Event forward
+  Rest Props
+  Type safe
+  Styling
+]
+created: 2024-01-30T13:14:22+0800
+updated: 2024-01-30T13:15:06+0800
+version: 1.1.1
+@end
+
+* Demand: component of clickable icon
+
+  We will frequently have the need to wrap the Icon component of Lucide in a button, so we can create a component.
+
+  .image pic/165/1.png
+
+  .image pic/165/2.png
+
+
+* Create IconButton component
+
+  .image pic/165/3.png
+
+  .image pic/165/4.png
+
+
+* Event forward and rest props
+
+  .image pic/165/5.png
+
+
+* Type safe
+
+  .image pic/165/6.png
+
+
+* Styling
+
+  .image pic/165/7.png
+
+
+* Label
+
+  We hope that the IconButton can be read by the browser reader, but we do not want the label content to appear on the screen.
+
+  .image pic/165/8.png

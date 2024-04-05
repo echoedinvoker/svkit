@@ -1,0 +1,57 @@
+@document.meta
+title: 147. Setting Up SASS
+description: 
+authors: mattc
+categories: [
+  SCSS
+  Breakpoint
+  Preprocess
+]
+created: 2024-01-22T14:53:56+0800
+updated: 2024-01-22T14:54:21+0800
+version: 1.1.1
+@end
+
+* Using SCSS in component
+
+  Note that you must first install the 'sass' package in order to use SCSS in the component.
+
+  .image pic/147/1.png
+
+
+* Create SCSS function & using it
+
+  .image pic/147/2.png
+
+
+* Preprocess SCSS
+
+  Vite's preprocess cannot be used on SCSS, so we need to use 'svelte-preprocess' instead to preprocess SCSS.
+
+  .image pic/147/3.png
+
+  .image pic/147/4.png
+
+  .image pic/147/5.png
+
+
+* SCSS Breakpoint
+
+  The Breakpoint in SCSS must be implemented using the package '@unsass/breakpoint'.
+
+** install & setup
+   .image pic/147/6.png
+
+   .image pic/147/7.png
+
+   .image pic/147/8.png
+
+** usage & test
+   .image pic/147/9.png
+
+   .image pic/147/10.png
+
+   .image pic/147/11.png
+
+   .image pic/147/12.png
+

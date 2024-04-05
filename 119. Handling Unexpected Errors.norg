@@ -1,0 +1,44 @@
+@document.meta
+title: 119. Handling Unexpected Errors
+description: 
+authors: mattc
+categories: [
+  Unexpected Errors
+  Error Handling
+  Client Side Error Handling
+]
+created: 2024-01-14T13:46:28+0800
+updated: 2024-01-14T13:46:48+0800
+version: 1.1.1
+@end
+
+* Unexpected error
+
+  Compared to expected errors, error messages thrown without using error() are usually unexpected errors, such as typo errors.
+
+  .image pic/119/1.png
+
+  Although it will still be handled by +error.svelte, the default response for unexpected error is 500 and there is no message to client. This is not user-friendly. We can use a hook to change the error message and also log the error.
+
+
+* Modify error response and logs in server side
+
+  .image pic/119/2.png
+
+
+* Add custom error properties
+
+  We can also add some additional properties to the error object, but we must define these properties additionally in app.d.ts to avoid type errors.
+
+  .image pic/119/3.png
+
+
+* Client side unexpected error handling
+
+  In addition to the SSR part, there may also be unexpected error situations on the client side. We can also use hooks to handle these errors, but it is in +hooks.client.ts.
+
+  .image pic/119/4.png
+
+  .image pic/119/5.png
+
+

@@ -1,0 +1,46 @@
+@document.meta
+title: 132. What are Form Actions?
+description: 
+authors: mattc
+categories: [
+  Form Actions
+  Form
+]
+created: 2024-01-16T20:49:01+0800
+updated: 2024-01-16T20:49:34+0800
+version: 1.1.1
+@end
+
+* Review login form we build before
+
+  Our previous login form is as bellow. We use state + bind to collect the value of the input, and then the submit event triggers a function to fetch our own endpoint to verify the login data.
+
+  .image pic/131/1.png
+
+  This method is the standard practice for form submission in other frameworks. It requires a JavaScript environment to work, but SvelteKit provides an alternative approach that can work in a non-JavaScript environment - Form Actions.
+
+
+* Restore to native form HTML.
+
+  Form Action is using the native mechanism of the form tag in HTML to POST values to the backend, instead of handling it through JavaScript. So first, we remove the unnecessary parts and only keep the native form.
+
+  .image pic/131/2.png
+
+
+* Build Actions
+
+  We just need to create an Actions object in the +page.server.ts file in the same route folder. When the form is submitted, the method 'default' in the Actions object will be executed.
+
+  .image pic/131/3.png
+
+  The attributes 'method' and 'action' of the form are required when using the native submit behavior. However, here we only need to have 'method'.
+
+  The 'default' method will receive the same event parameter as in the load function. We can use event.request.formData() to retrieve the values collected inside the form. Note that it is asynchronous.
+
+
+* Invoke Actions from the form of other routes
+
+  We can call actions from forms in other routes. When the form and actions are in the same route, we just omit the action attribute as above mention. If they are in different routes, we must use the action attribute to specify the route where the actions to be called are located.
+
+  .image pic/131/4.png
+

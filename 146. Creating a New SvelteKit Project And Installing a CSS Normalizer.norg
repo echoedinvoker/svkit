@@ -1,0 +1,29 @@
+@document.meta
+title: 146. Creating a New SvelteKit Project And Installing a CSS Normalizer
+description: 
+authors: mattc
+categories: [
+  Create project
+  Normalize styles
+]
+created: 2024-01-22T13:57:04+0800
+updated: 2024-01-22T13:57:29+0800
+version: 1.1.1
+@end
+
+* Create new SvelteKit project
+
+.image pic/143/1.png
+
+
+* Normalize Styles
+
+** install 'modern-normalize' package
+The default styles may vary in different browsers, so we use the 'modern-normalize' package to normalize styles.
+
+.image pic/143/2.png
+
+** import 'modern-normalize' package to all pages
+We need to import the 'modern-normalize' package on every page. The best way to do this is to import it in the root layout, as the root layout will be used by all pages.
+
+.image pic/143/4.png

@@ -1,0 +1,46 @@
+@document.meta
+title: 90. Rest Parameters
+description: 
+authors: mattc
+categories: [
+  Route
+]
+created: 2024-01-06T11:59:40+0800
+updated: 2024-01-06T11:59:59+0800
+version: 1.1.1
+@end
+
+* Multiple endpoints and params
+
+  .image pic/90/1.png
+
+  .image pic/90/2.png
+
+  .image pic/90/3.png
+
+
+* Rest params
+
+  If a value in the params must include '/', we use rest params to handle it.
+
+  .image pic/90/4.png
+
+
+* Mix using regular and rest params
+
+  .image pic/90/5.png
+
+  .image pic/90/6.png
+
+
+* Mix using regular and rest params and multiple endpoints!
+
+  .image pic/90/7.png
+
+  .image pic/90/8.png
+
+
+* Conclusion
+
+  So the combination of routes is extremely flexible. In SvelteKit, we can easily use folder structure to construct complex routes.
+

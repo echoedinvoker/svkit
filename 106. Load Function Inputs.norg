@@ -1,0 +1,33 @@
+@document.meta
+title: 106. Load Function Inputs
+description: 
+authors: mattc
+categories: [
+  Load Function
+  Params
+]
+created: 2024-01-09T20:28:18+0800
+updated: 2024-01-09T20:28:35+0800
+version: 1.1.1
+@end
+
+> The loading function can have different params available depending on the type.
+
+> We have used a small portion, and below we will give a brief introduction of all the params that can be used.
+
+* +page.ts
+
+  .image pic/106/1.png
+
+
+* +page.server.ts
+
+  .image pic/106/2.png
+
+
+* +server.ts
+
+  The loading function in server.ts can use almost the same parameters as page.server.ts, except for a few params related to the page.
+
+  .image pic/106/3.png
+

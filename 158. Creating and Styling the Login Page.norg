@@ -1,0 +1,77 @@
+@document.meta
+title: 158. Creating and Styling the Login Page
+description: 
+authors: mattc
+categories: [
+  RWD
+  Styling
+  Layout Design
+  Space
+  Flexbox
+]
+created: 2024-01-24T23:13:34+0800
+updated: 2024-01-24T23:14:15+0800
+version: 1.1.1
+@end
+
+* Alias $assets
+
+  .image pic/158/1.png
+
+
+* Root layout general template
+
+** multiple containers
+   Because we usually design sidebars, menus, and other components in the root layout, we use this multi-layered container to wrap the main page for future styling convenience.
+
+   .image pic/158/2.png
+
+** RWD
+   .image pic/158/3.png
+
+
+* Complete template
+
+  .image pic/158/4.png
+
+  Because the planning requires two sections (left & right), the outer layer needs to be wrapped in a container tag in order to set the layout.
+
+
+* Styling: layout
+
+  .image pic/158/5.png
+
+  .image pic/158/6.png
+
+  .image pic/158/7.png
+
+  .image pic/158/8.png
+
+
+* Left block
+
+  .image pic/158/9.png
+
+  Because the style in Svelte is local by default, if you want to style an element outside of the component, you need to use `:global` to specify it.
+
+
+* Background
+
+** gradient
+   .image pic/158/10.png
+
+** expend full height of screen
+   .image pic/158/11.png
+
+
+* RWD
+
+** layout
+   .image pic/158/12.png
+
+   .image pic/158/13.png
+
+** fix spaces between
+   .image pic/158/14.png
+
+   .image pic/158/15.png
